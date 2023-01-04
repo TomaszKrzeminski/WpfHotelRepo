@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "ZpoMPV6KIygIV5FlrSQTlq88n4ty+kImMuXkxZKdnpEUUasVWVkEjHEA1tlggt5cVaua5iFbCZ7cA/t2bz5qlQ==",
+  "dgSpecHash": "7CSKc0lr2AlWugZ9fFmJRRygiCkVXRHZCgRfFLYFQIMmOG3LQ3XHs4LE2Iz1oeOmld7WnEoZLIWDQLy1RgvKzA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\tomas\\OneDrive\\Pulpit\\HotelWpfApp\\HotelWpfApp.csproj",
+  "projectFilePath": "C:\\Users\\tomas\\OneDrive\\Pulpit\\WpfHotelRepo\\HotelWpfApp\\HotelWpfApp.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\tomas\\.nuget\\packages\\commonservicelocator\\2.0.4\\commonservicelocator.2.0.4.nupkg.sha512",
     "C:\\Users\\tomas\\.nuget\\packages\\dryioc.dll\\4.0.7\\dryioc.dll.4.0.7.nupkg.sha512",

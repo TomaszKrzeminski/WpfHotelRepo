@@ -1,4 +1,5 @@
-﻿using Prism.DryIoc;
+﻿using HotelWpfApp.Views;
+using Prism.DryIoc;
 using Prism.Ioc;
 using System;
 using System.Collections.Generic;
@@ -17,7 +18,7 @@ namespace HotelWpfApp
     {
         protected override Window CreateShell()
         {
-            
+            return Container.Resolve<ShellWindow>();
         }
 
         protected override void RegisterTypes(IContainerRegistry containerRegistry)
