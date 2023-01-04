@@ -3,7 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.4.33110.190
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HotelWpfApp", "HotelWpfApp.csproj", "{D446D48D-4F33-428B-8019-824BD2D7C90A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HotelWpfApp", "HotelWpfApp.csproj", "{D446D48D-4F33-428B-8019-824BD2D7C90A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "NavigationModule", "NavigationModule", "{B18DCE39-74E7-4D58-B7A4-5F04740C79B0}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NavigationModule", "..\Navigation\NavigationModule.csproj", "{4A36044A-24C5-4FE1-A66C-6EE0454828E1}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "OptionsModule", "OptionsModule", "{3F582479-69C5-460C-A123-802F0D9A5C86}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OptionsModule", "..\Options\OptionsModule.csproj", "{69B6B80C-A23A-4C33-A554-6325BD56C052}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,9 +23,21 @@ Global
 		{D446D48D-4F33-428B-8019-824BD2D7C90A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D446D48D-4F33-428B-8019-824BD2D7C90A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D446D48D-4F33-428B-8019-824BD2D7C90A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4A36044A-24C5-4FE1-A66C-6EE0454828E1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4A36044A-24C5-4FE1-A66C-6EE0454828E1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4A36044A-24C5-4FE1-A66C-6EE0454828E1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4A36044A-24C5-4FE1-A66C-6EE0454828E1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{69B6B80C-A23A-4C33-A554-6325BD56C052}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{69B6B80C-A23A-4C33-A554-6325BD56C052}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{69B6B80C-A23A-4C33-A554-6325BD56C052}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{69B6B80C-A23A-4C33-A554-6325BD56C052}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{4A36044A-24C5-4FE1-A66C-6EE0454828E1} = {B18DCE39-74E7-4D58-B7A4-5F04740C79B0}
+		{69B6B80C-A23A-4C33-A554-6325BD56C052} = {3F582479-69C5-460C-A123-802F0D9A5C86}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {8EEABC47-36EC-4486-84B6-7C29471EE815}

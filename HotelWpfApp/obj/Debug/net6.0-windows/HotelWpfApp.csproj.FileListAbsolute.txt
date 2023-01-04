@@ -1,3 +1,8 @@
+C:\Users\tomas\OneDrive\Pulpit\WpfHotelRepo\HotelWpfApp\obj\Debug\net6.0-windows\HotelWpfApp.csproj.AssemblyReference.cache
+C:\Users\tomas\OneDrive\Pulpit\WpfHotelRepo\HotelWpfApp\obj\Debug\net6.0-windows\Views\ShellWindow.g.cs
+C:\Users\tomas\OneDrive\Pulpit\WpfHotelRepo\HotelWpfApp\obj\Debug\net6.0-windows\App.g.cs
+C:\Users\tomas\OneDrive\Pulpit\WpfHotelRepo\HotelWpfApp\obj\Debug\net6.0-windows\HotelWpfApp_MarkupCompile.cache
+C:\Users\tomas\OneDrive\Pulpit\WpfHotelRepo\HotelWpfApp\obj\Debug\net6.0-windows\HotelWpfApp_MarkupCompile.lref
 C:\Users\tomas\OneDrive\Pulpit\WpfHotelRepo\HotelWpfApp\bin\Debug\net6.0-windows\HotelWpfApp.exe
 C:\Users\tomas\OneDrive\Pulpit\WpfHotelRepo\HotelWpfApp\bin\Debug\net6.0-windows\HotelWpfApp.deps.json
 C:\Users\tomas\OneDrive\Pulpit\WpfHotelRepo\HotelWpfApp\bin\Debug\net6.0-windows\HotelWpfApp.runtimeconfig.json
@@ -9,11 +14,10 @@ C:\Users\tomas\OneDrive\Pulpit\WpfHotelRepo\HotelWpfApp\bin\Debug\net6.0-windows
 C:\Users\tomas\OneDrive\Pulpit\WpfHotelRepo\HotelWpfApp\bin\Debug\net6.0-windows\Prism.DryIoc.Wpf.dll
 C:\Users\tomas\OneDrive\Pulpit\WpfHotelRepo\HotelWpfApp\bin\Debug\net6.0-windows\Prism.Wpf.dll
 C:\Users\tomas\OneDrive\Pulpit\WpfHotelRepo\HotelWpfApp\bin\Debug\net6.0-windows\System.Windows.Interactivity.dll
-C:\Users\tomas\OneDrive\Pulpit\WpfHotelRepo\HotelWpfApp\obj\Debug\net6.0-windows\HotelWpfApp.csproj.AssemblyReference.cache
-C:\Users\tomas\OneDrive\Pulpit\WpfHotelRepo\HotelWpfApp\obj\Debug\net6.0-windows\Views\ShellWindow.g.cs
-C:\Users\tomas\OneDrive\Pulpit\WpfHotelRepo\HotelWpfApp\obj\Debug\net6.0-windows\App.g.cs
-C:\Users\tomas\OneDrive\Pulpit\WpfHotelRepo\HotelWpfApp\obj\Debug\net6.0-windows\HotelWpfApp_MarkupCompile.cache
-C:\Users\tomas\OneDrive\Pulpit\WpfHotelRepo\HotelWpfApp\obj\Debug\net6.0-windows\HotelWpfApp_MarkupCompile.lref
+C:\Users\tomas\OneDrive\Pulpit\WpfHotelRepo\HotelWpfApp\bin\Debug\net6.0-windows\NavigationModule.dll
+C:\Users\tomas\OneDrive\Pulpit\WpfHotelRepo\HotelWpfApp\bin\Debug\net6.0-windows\OptionsModule.dll
+C:\Users\tomas\OneDrive\Pulpit\WpfHotelRepo\HotelWpfApp\bin\Debug\net6.0-windows\NavigationModule.pdb
+C:\Users\tomas\OneDrive\Pulpit\WpfHotelRepo\HotelWpfApp\bin\Debug\net6.0-windows\OptionsModule.pdb
 C:\Users\tomas\OneDrive\Pulpit\WpfHotelRepo\HotelWpfApp\obj\Debug\net6.0-windows\Views\ShellWindow.baml
 C:\Users\tomas\OneDrive\Pulpit\WpfHotelRepo\HotelWpfApp\obj\Debug\net6.0-windows\HotelWpfApp.g.resources
 C:\Users\tomas\OneDrive\Pulpit\WpfHotelRepo\HotelWpfApp\obj\Debug\net6.0-windows\HotelWpfApp.GeneratedMSBuildEditorConfig.editorconfig

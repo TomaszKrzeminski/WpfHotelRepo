@@ -4,9 +4,47 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:HotelWpfApp.Views"
+        xmlns:prism="http://prismlibrary.com/"
+        prism:ViewModelLocator.AutoWireViewModel="True"
         mc:Ignorable="d"
         Title="ShellWindow" Height="450" Width="800">
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition  Height="10*"></RowDefinition>
+            <RowDefinition Height="90*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0" Background="DarkSlateGray">
+            <ContentControl prism:RegionManager.RegionName="ContentNavigation" >
+                
+            </ContentControl>
+        </Grid>
+        <Grid  Grid.Row="1" Background="Gray">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition  Width="20*"></ColumnDefinition>
+                <ColumnDefinition  Width="1*"></ColumnDefinition>
+                <ColumnDefinition  Width="80*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Grid  Grid.Column="0" Background="White">
+                <ContentControl prism:RegionManager.RegionName="ContentOptions" >
+
+                </ContentControl> 
+                
+            </Grid>
+            <GridSplitter Grid.Column="1"
+
+              HorizontalAlignment="Center"
+
+              VerticalAlignment="Stretch"
+
+              Background="Black"
+
+              ShowsPreview="True"
+
+              Width="5"
+
+              />
+            <Grid Grid.Column="2" Background="Aqua"></Grid>
+        </Grid>
+
     </Grid>
 </Window>

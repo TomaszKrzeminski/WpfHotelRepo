@@ -1,0 +1,17 @@
+C:\Users\tomas\OneDrive\Pulpit\WpfHotelRepo\OptionsModule\bin\Debug\net6.0-windows\OptionsModule.deps.json
+C:\Users\tomas\OneDrive\Pulpit\WpfHotelRepo\OptionsModule\bin\Debug\net6.0-windows\OptionsModule.dll
+C:\Users\tomas\OneDrive\Pulpit\WpfHotelRepo\OptionsModule\bin\Debug\net6.0-windows\OptionsModule.pdb
+C:\Users\tomas\OneDrive\Pulpit\WpfHotelRepo\OptionsModule\obj\Debug\net6.0-windows\OptionsModule.csproj.AssemblyReference.cache
+C:\Users\tomas\OneDrive\Pulpit\WpfHotelRepo\OptionsModule\obj\Debug\net6.0-windows\UserControl1.g.cs
+C:\Users\tomas\OneDrive\Pulpit\WpfHotelRepo\OptionsModule\obj\Debug\net6.0-windows\OptionsModule_MarkupCompile.cache
+C:\Users\tomas\OneDrive\Pulpit\WpfHotelRepo\OptionsModule\obj\Debug\net6.0-windows\OptionsModule_MarkupCompile.lref
+C:\Users\tomas\OneDrive\Pulpit\WpfHotelRepo\OptionsModule\obj\Debug\net6.0-windows\UserControl1.baml
+C:\Users\tomas\OneDrive\Pulpit\WpfHotelRepo\OptionsModule\obj\Debug\net6.0-windows\OptionsModule.g.resources
+C:\Users\tomas\OneDrive\Pulpit\WpfHotelRepo\OptionsModule\obj\Debug\net6.0-windows\OptionsModule.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\tomas\OneDrive\Pulpit\WpfHotelRepo\OptionsModule\obj\Debug\net6.0-windows\OptionsModule.AssemblyInfoInputs.cache
+C:\Users\tomas\OneDrive\Pulpit\WpfHotelRepo\OptionsModule\obj\Debug\net6.0-windows\OptionsModule.AssemblyInfo.cs
+C:\Users\tomas\OneDrive\Pulpit\WpfHotelRepo\OptionsModule\obj\Debug\net6.0-windows\OptionsModule.csproj.CoreCompileInputs.cache
+C:\Users\tomas\OneDrive\Pulpit\WpfHotelRepo\OptionsModule\obj\Debug\net6.0-windows\OptionsModule.dll
+C:\Users\tomas\OneDrive\Pulpit\WpfHotelRepo\OptionsModule\obj\Debug\net6.0-windows\refint\OptionsModule.dll
+C:\Users\tomas\OneDrive\Pulpit\WpfHotelRepo\OptionsModule\obj\Debug\net6.0-windows\OptionsModule.pdb
+C:\Users\tomas\OneDrive\Pulpit\WpfHotelRepo\OptionsModule\obj\Debug\net6.0-windows\ref\OptionsModule.dll

@@ -13,4 +13,9 @@
     <PackageReference Include="Prism.Wpf" Version="7.2.0.1422" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Navigation\NavigationModule.csproj" />
+    <ProjectReference Include="..\Options\OptionsModule.csproj" />
+  </ItemGroup>
+
 </Project>

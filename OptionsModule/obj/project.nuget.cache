@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "Vk+k3yTNBR3X/8hN71EagDQA9u/tXjhri6ua/z2f022py9ajIm699XgvTrKEmk+iQNJ3bYoQFyJlA5xeSWilMw==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\tomas\\OneDrive\\Pulpit\\WpfHotelRepo\\OptionsModule\\OptionsModule.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\tomas\\.nuget\\packages\\commonservicelocator\\2.0.4\\commonservicelocator.2.0.4.nupkg.sha512",
+    "C:\\Users\\tomas\\.nuget\\packages\\prism.core\\7.2.0.1422\\prism.core.7.2.0.1422.nupkg.sha512",
+    "C:\\Users\\tomas\\.nuget\\packages\\prism.wpf\\7.2.0.1422\\prism.wpf.7.2.0.1422.nupkg.sha512"
+  ],
+  "logs": []
+}

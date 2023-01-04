@@ -1,0 +1,17 @@
+C:\Users\tomas\OneDrive\Pulpit\WpfHotelRepo\Navigation\bin\Debug\net6.0-windows\NavigationModule.deps.json
+C:\Users\tomas\OneDrive\Pulpit\WpfHotelRepo\Navigation\bin\Debug\net6.0-windows\NavigationModule.dll
+C:\Users\tomas\OneDrive\Pulpit\WpfHotelRepo\Navigation\bin\Debug\net6.0-windows\NavigationModule.pdb
+C:\Users\tomas\OneDrive\Pulpit\WpfHotelRepo\Navigation\obj\Debug\net6.0-windows\NavigationModule.csproj.AssemblyReference.cache
+C:\Users\tomas\OneDrive\Pulpit\WpfHotelRepo\Navigation\obj\Debug\net6.0-windows\Views\ViewNavigation.g.cs
+C:\Users\tomas\OneDrive\Pulpit\WpfHotelRepo\Navigation\obj\Debug\net6.0-windows\NavigationModule_MarkupCompile.cache
+C:\Users\tomas\OneDrive\Pulpit\WpfHotelRepo\Navigation\obj\Debug\net6.0-windows\NavigationModule_MarkupCompile.lref
+C:\Users\tomas\OneDrive\Pulpit\WpfHotelRepo\Navigation\obj\Debug\net6.0-windows\Views\ViewNavigation.baml
+C:\Users\tomas\OneDrive\Pulpit\WpfHotelRepo\Navigation\obj\Debug\net6.0-windows\NavigationModule.g.resources
+C:\Users\tomas\OneDrive\Pulpit\WpfHotelRepo\Navigation\obj\Debug\net6.0-windows\NavigationModule.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\tomas\OneDrive\Pulpit\WpfHotelRepo\Navigation\obj\Debug\net6.0-windows\NavigationModule.AssemblyInfoInputs.cache
+C:\Users\tomas\OneDrive\Pulpit\WpfHotelRepo\Navigation\obj\Debug\net6.0-windows\NavigationModule.AssemblyInfo.cs
+C:\Users\tomas\OneDrive\Pulpit\WpfHotelRepo\Navigation\obj\Debug\net6.0-windows\NavigationModule.csproj.CoreCompileInputs.cache
+C:\Users\tomas\OneDrive\Pulpit\WpfHotelRepo\Navigation\obj\Debug\net6.0-windows\NavigationModule.dll
+C:\Users\tomas\OneDrive\Pulpit\WpfHotelRepo\Navigation\obj\Debug\net6.0-windows\refint\NavigationModule.dll
+C:\Users\tomas\OneDrive\Pulpit\WpfHotelRepo\Navigation\obj\Debug\net6.0-windows\NavigationModule.pdb
+C:\Users\tomas\OneDrive\Pulpit\WpfHotelRepo\Navigation\obj\Debug\net6.0-windows\ref\NavigationModule.dll

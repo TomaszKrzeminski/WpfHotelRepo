@@ -213,6 +213,38 @@
             "related": ".xml"
           }
         }
+      },
+      "NavigationModule/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "Prism.Wpf": "7.2.0.1422"
+        },
+        "compile": {
+          "bin/placeholder/NavigationModule.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/NavigationModule.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.WindowsDesktop.App.WPF"
+        ]
+      },
+      "OptionsModule/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "Prism.Wpf": "7.2.0.1422"
+        },
+        "compile": {
+          "bin/placeholder/OptionsModule.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/OptionsModule.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.WindowsDesktop.App.WPF"
+        ]
       }
     }
   },
@@ -887,10 +919,22 @@
         "system.threading.tasks.4.3.0.nupkg.sha512",
         "system.threading.tasks.nuspec"
       ]
+    },
+    "NavigationModule/1.0.0": {
+      "type": "project",
+      "path": "../Navigation/NavigationModule.csproj",
+      "msbuildProject": "../Navigation/NavigationModule.csproj"
+    },
+    "OptionsModule/1.0.0": {
+      "type": "project",
+      "path": "../Options/OptionsModule.csproj",
+      "msbuildProject": "../Options/OptionsModule.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net6.0-windows7.0": [
+      "NavigationModule >= 1.0.0",
+      "OptionsModule >= 1.0.0",
       "Prism.Core >= 7.2.0.1422",
       "Prism.DryIoc >= 7.2.0.1422",
       "Prism.Wpf >= 7.2.0.1422"
@@ -927,7 +971,14 @@
       "frameworks": {
         "net6.0-windows7.0": {
           "targetAlias": "net6.0-windows",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\tomas\\OneDrive\\Pulpit\\WpfHotelRepo\\Navigation\\NavigationModule.csproj": {
+              "projectPath": "C:\\Users\\tomas\\OneDrive\\Pulpit\\WpfHotelRepo\\Navigation\\NavigationModule.csproj"
+            },
+            "C:\\Users\\tomas\\OneDrive\\Pulpit\\WpfHotelRepo\\Options\\OptionsModule.csproj": {
+              "projectPath": "C:\\Users\\tomas\\OneDrive\\Pulpit\\WpfHotelRepo\\Options\\OptionsModule.csproj"
+            }
+          }
         }
       },
       "warningProperties": {
