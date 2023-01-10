@@ -43,7 +43,11 @@
               Width="5"
 
               />
-            <Grid Grid.Column="2" Background="Aqua"></Grid>
+            <Grid Grid.Column="2" Background="Aqua">
+                <ContentControl prism:RegionManager.RegionName="ContentReserveMain" >
+                    
+                </ContentControl>
+            </Grid>
         </Grid>
 
     </Grid>

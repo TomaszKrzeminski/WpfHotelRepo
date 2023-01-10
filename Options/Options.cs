@@ -25,7 +25,7 @@ namespace OptionsModule
 
         public void RegisterTypes(IContainerRegistry containerRegistry)
         {
-            //containerRegistry.RegisterForNavigation<ViewE>();
+            //containerRegistry.RegisterForNavigation<ViewOptions>();
             //ViewModelLocationProvider.Register<ViewE, ViewEViewModel>();
         }
     }

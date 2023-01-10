@@ -1,0 +1,168 @@
+﻿<TabItem 
+    x:Class="ReserveModule.Views.AddMeals"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:prism="http://prismlibrary.com/"             
+    prism:ViewModelLocator.AutoWireViewModel="True"
+    Header="{Binding Header}">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="33*" />
+            <ColumnDefinition Width="33*" />
+            <ColumnDefinition Width="33*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="10*" />
+            <RowDefinition Height="20*"  />
+            <RowDefinition Height="10*"  />
+            <RowDefinition Height="20*"  />
+            <RowDefinition Height="20*"  />
+
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Row="0" Grid.ColumnSpan="3" HorizontalAlignment="Stretch" Orientation="Vertical" >
+            <Label HorizontalAlignment="Center" FontSize="30">Wybierz posiłki</Label>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="33*"></ColumnDefinition>
+                    <ColumnDefinition Width="33*"></ColumnDefinition>
+                    <ColumnDefinition Width="33*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition ></RowDefinition>
+                </Grid.RowDefinitions>
+                <Label HorizontalAlignment="Center" Grid.Row="0" Grid.Column="0" FontSize="20">Śniadanie</Label>
+                <Label HorizontalAlignment="Center" Grid.Row="0" Grid.Column="1" FontSize="20">Obiad</Label>
+                <Label HorizontalAlignment="Center" Grid.Row="0" Grid.Column="2" FontSize="20">Kolacja</Label>
+            </Grid>
+           
+        </StackPanel>
+        <DataGrid AutoGenerateColumns="False" Grid.Row="1" Grid.Column="0"  ItemsSource="{Binding Path=BreakfastList}" SelectedItem="{Binding Path=SelectedBreakfastList}"  x:Name="BrakfastList" CanUserAddRows="false">
+            <DataGrid.Columns>                
+                <DataGridTextColumn Width="15*" Header="Nazwa" Binding="{Binding Path=Name}"/>
+                <DataGridTextColumn Width="15*" Header="Cena" Binding="{Binding Path=Price}"/>              
+                <DataGridTemplateColumn>
+                    <DataGridTemplateColumn.Header>
+                        <TextBlock>Wybierz</TextBlock>
+                    </DataGridTemplateColumn.Header>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Command="{Binding  Path=DataContext.AddBreakFast
+                                  ,RelativeSource={RelativeSource AncestorType={x:Type DataGrid}}}" >Dodaj</Button>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                
+            </DataGrid.Columns>
+
+        </DataGrid>
+        <DataGrid AutoGenerateColumns="False" Grid.Row="1" Grid.Column="1"  ItemsSource="{Binding Path=DinnerList}" SelectedItem="{Binding Path=SelectedDinnerList}" x:Name="DinnerList" CanUserAddRows="false">
+            <DataGrid.Columns>
+                <DataGridTextColumn Width="15*" Header="Nazwa" Binding="{Binding Path=Name}"/>
+                <DataGridTextColumn Width="15*" Header="Cena" Binding="{Binding Path=Price}"/>
+                <DataGridTemplateColumn>
+                    <DataGridTemplateColumn.Header>
+                        <TextBlock>Wybierz</TextBlock>
+                    </DataGridTemplateColumn.Header>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Command="{Binding  Path=DataContext.AddDinner
+                                  ,RelativeSource={RelativeSource AncestorType={x:Type DataGrid}}}" >Dodaj</Button>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                
+            </DataGrid.Columns>
+
+        </DataGrid>
+        <DataGrid AutoGenerateColumns="False" Grid.Row="1" Grid.Column="2"  ItemsSource="{Binding Path=SupperList}" SelectedItem="{Binding Path=SelectedSupperList}" x:Name="SupperList" CanUserAddRows="false">
+            <DataGrid.Columns>
+                <DataGridTextColumn Width="15*" Header="Nazwa" Binding="{Binding Path=Name}"/>
+                <DataGridTextColumn Width="15*" Header="Cena" Binding="{Binding Path=Price}"/>
+                <DataGridTemplateColumn>
+                    <DataGridTemplateColumn.Header>
+                        <TextBlock>Wybierz</TextBlock>
+                    </DataGridTemplateColumn.Header>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Command="{Binding  Path=DataContext.AddSupper
+                                  ,RelativeSource={RelativeSource AncestorType={x:Type DataGrid}}}" >Dodaj</Button>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+               
+            </DataGrid.Columns>
+
+        </DataGrid>
+        <StackPanel Grid.Row="2" Grid.ColumnSpan="3" HorizontalAlignment="Center" Orientation="Horizontal">
+            <Label Margin="0,2" VerticalAlignment="Stretch" FontSize="20">Wybrane</Label>
+            <Label Content="{Binding Path=Count}" Margin="0,10" VerticalAlignment="Stretch"> </Label>          
+            <Label Margin="0,10" VerticalAlignment="Stretch">Dopłata :</Label>
+            <Label Content="{Binding Path=Price}" Margin="0,10" VerticalAlignment="Stretch"></Label>
+        </StackPanel>
+
+        <DataGrid AutoGenerateColumns="False" Grid.Row="3" Grid.Column="0"  ItemsSource="{Binding Path=BreakfastListChosen}" SelectedItem="{Binding Path=SelectedBreakfastListChosen}" x:Name="BrakfastListChosen" CanUserAddRows="false">
+            <DataGrid.Columns>
+                <DataGridTextColumn Width="15*" Header="Nazwa" Binding="{Binding Path=Name}"/>
+                <DataGridTextColumn Width="15*" Header="Cena" Binding="{Binding Path=Price}"/>
+               
+                <DataGridTemplateColumn>
+                    <DataGridTemplateColumn.Header>
+                        <TextBlock>Anuluj</TextBlock>
+                    </DataGridTemplateColumn.Header>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Command="{Binding  Path=DataContext.RemoveBreakfast
+                                  ,RelativeSource={RelativeSource AncestorType={x:Type DataGrid}}}" >Usuń</Button>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+
+        </DataGrid>
+        <DataGrid AutoGenerateColumns="False" Grid.Row="3" Grid.Column="1"  ItemsSource="{Binding Path=DinnerListChosen}" SelectedItem="{Binding Path=SelectedDinnerListChosen}" x:Name="DinnerListChosen" CanUserAddRows="false">
+            <DataGrid.Columns>
+                <DataGridTextColumn Width="15*" Header="Nazwa" Binding="{Binding Path=Name}"/>
+                <DataGridTextColumn Width="15*" Header="Cena" Binding="{Binding Path=Price}"/>
+              
+                <DataGridTemplateColumn>
+                    <DataGridTemplateColumn.Header>
+                        <TextBlock>Anuluj</TextBlock>
+                    </DataGridTemplateColumn.Header>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Command="{Binding  Path=DataContext.RemoveDinner
+                                  ,RelativeSource={RelativeSource AncestorType={x:Type DataGrid}}}" >Usuń</Button>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+
+        </DataGrid>
+
+        <DataGrid AutoGenerateColumns="False" Grid.Row="3" Grid.Column="2"  ItemsSource="{Binding Path=SupperListChosen}" SelectedItem="{Binding Path=SelectedSupperListChosen}" x:Name="SupperListChosen" CanUserAddRows="false">
+            <DataGrid.Columns>
+                <DataGridTextColumn Width="15*" Header="Nazwa" Binding="{Binding Path=Name}"/>
+                <DataGridTextColumn Width="15*" Header="Cena" Binding="{Binding Path=Price}"/>
+               
+                <DataGridTemplateColumn>
+                    <DataGridTemplateColumn.Header>
+                        <TextBlock>Anuluj</TextBlock>
+                    </DataGridTemplateColumn.Header>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Command="{Binding  Path=DataContext.RemoveSupper
+                                  ,RelativeSource={RelativeSource AncestorType={x:Type DataGrid}}}" >Usuń</Button>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+
+        </DataGrid>
+        <StackPanel Grid.Row="4" Grid.ColumnSpan="3" Orientation="Horizontal" HorizontalAlignment="Center" >
+            <Button MaxHeight="45" FontSize="30" HorizontalAlignment="Center" VerticalAlignment="Center" Command="{Binding Path=Reset}">Wyczyść</Button>                
+        </StackPanel>
+
+
+
+    </Grid>
+</TabItem>

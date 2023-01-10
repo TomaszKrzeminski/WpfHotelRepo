@@ -1,0 +1,12 @@
+C:\Users\tomas\OneDrive\Pulpit\WpfHotelRepo\CoreModule\obj\Debug\net6.0-windows\CoreModule.csproj.AssemblyReference.cache
+C:\Users\tomas\OneDrive\Pulpit\WpfHotelRepo\CoreModule\obj\Debug\net6.0-windows\CoreModule.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\tomas\OneDrive\Pulpit\WpfHotelRepo\CoreModule\obj\Debug\net6.0-windows\CoreModule.AssemblyInfoInputs.cache
+C:\Users\tomas\OneDrive\Pulpit\WpfHotelRepo\CoreModule\obj\Debug\net6.0-windows\CoreModule.AssemblyInfo.cs
+C:\Users\tomas\OneDrive\Pulpit\WpfHotelRepo\CoreModule\obj\Debug\net6.0-windows\CoreModule.csproj.CoreCompileInputs.cache
+C:\Users\tomas\OneDrive\Pulpit\WpfHotelRepo\CoreModule\bin\Debug\net6.0-windows\CoreModule.deps.json
+C:\Users\tomas\OneDrive\Pulpit\WpfHotelRepo\CoreModule\bin\Debug\net6.0-windows\CoreModule.dll
+C:\Users\tomas\OneDrive\Pulpit\WpfHotelRepo\CoreModule\bin\Debug\net6.0-windows\CoreModule.pdb
+C:\Users\tomas\OneDrive\Pulpit\WpfHotelRepo\CoreModule\obj\Debug\net6.0-windows\CoreModule.dll
+C:\Users\tomas\OneDrive\Pulpit\WpfHotelRepo\CoreModule\obj\Debug\net6.0-windows\refint\CoreModule.dll
+C:\Users\tomas\OneDrive\Pulpit\WpfHotelRepo\CoreModule\obj\Debug\net6.0-windows\CoreModule.pdb
+C:\Users\tomas\OneDrive\Pulpit\WpfHotelRepo\CoreModule\obj\Debug\net6.0-windows\ref\CoreModule.dll

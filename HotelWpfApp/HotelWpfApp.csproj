@@ -14,8 +14,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\CoreModule\CoreModule.csproj" />
     <ProjectReference Include="..\Navigation\NavigationModule.csproj" />
     <ProjectReference Include="..\Options\OptionsModule.csproj" />
+    <ProjectReference Include="..\ReserveModule\ReserveModule.csproj" />
   </ItemGroup>
 
 </Project>
