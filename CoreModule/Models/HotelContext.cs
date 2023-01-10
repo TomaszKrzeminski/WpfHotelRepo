@@ -32,7 +32,9 @@ namespace CoreModule.Models
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            //modelBuilder.Entity<Room>().HasKey(sc => new { sc.UserID, sc.BookID });
+            modelBuilder.Entity<ReservationActivity>().HasKey(sc => new { sc.ReservationID, sc.ActivityID });
+            modelBuilder.Entity<ReservationMeal>().HasKey(sc => new { sc.ReservationID, sc.MealID });
+
             //modelBuilder.Entity<BookAuthor>().HasKey(sc => new { sc.BookID, sc.AuthorID });
         }
 
@@ -45,6 +47,8 @@ namespace CoreModule.Models
         public DbSet<Meal> Meals { get; set; }
         public DbSet<Activity> Activities { get; set; }         
         public DbSet<DayOfWeekForMeals> DayOfWeekForMeals { get;set; }
+        public DbSet<ReservationActivity> ReservationActivities { get; set; }
+        public DbSet<ReservationMeal> ReservationMeals { get; set;}
 
 
     }

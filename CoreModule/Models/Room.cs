@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore.Update.Internal;
+using Microsoft.Identity.Client;
 using Prism.Mvvm;
 using System;
 using System.Collections.Generic;
@@ -8,6 +9,90 @@ using System.Threading.Tasks;
 
 namespace CoreModule.Models
 {
+
+
+    public class ReservationActivity
+    {
+        public ReservationActivity()
+        {
+
+        }
+        public int ReservationID { get; set; }
+        public Reservation Reservation { get; set; }
+
+        public int ActivityID { get; set; }
+        public Activity Activity { get; set; }
+    }
+
+    public class ReservationMeal
+    {
+        public ReservationMeal()
+        {
+
+        }
+        public int ReservationID { get; set; }
+        public Reservation Reservation { get; set; }
+
+        public int MealID { get; set; }
+        public Meal Meal { get; set; }
+    }
+
+    public class Reservation
+    {
+        public Reservation()
+        {
+
+        }
+        public Reservation( DateTime startDate, DateTime endDate, int? userID, User user)
+        {            
+            StartDate = startDate;
+            EndDate = endDate;
+            UserID = userID;
+            User = user;
+            reservationMeals = new List<ReservationMeal>();
+            reservationActivities = new List<ReservationActivity>();
+
+        }
+
+        public int ReservationID { get; set; }
+        public DateTime StartDate { get; set; }
+        public DateTime EndDate { get; set; }
+
+        public int? UserID { get; set; }
+        public virtual User User { get; set; }
+
+        public int? RoomID { get; set; }
+        public virtual Room Room { get; set; }
+
+        public virtual List<ReservationActivity> reservationActivities { get; set; }
+        public virtual List<ReservationMeal> reservationMeals { get; set; }
+    }
+
+
+    public class User
+    {
+        public User( string firstName, string city, string street, string houseNumber, string postalCode, string personalNumber)
+        {
+           
+            FirstName = firstName;
+            City = city;
+            Street = street;
+            HouseNumber = houseNumber;
+            PostalCode = postalCode;
+            PersonalNumber = personalNumber;
+            reservations = new List<Reservation>();
+        }
+
+        public int UserID { get; set; }
+        public string FirstName { get; set; }
+        public string City { get; set; }
+        public string Street { get; set; }
+        public string HouseNumber { get; set; }
+        public string PostalCode { get; set; }
+        public string PersonalNumber { get; set; }
+
+        public virtual List<Reservation> reservations { get; set; }
+    }
     public enum RoomType
     {
         Single_Room, Double_Room, Triple_Room, Four_Person_Room
@@ -31,6 +116,7 @@ namespace CoreModule.Models
             TV = false;
             Appartments = 1;
             RoomType = RoomType.Single_Room;
+            reservations = new List<Reservation>();
         }
 
         public int RoomID { get; set; }
@@ -41,6 +127,7 @@ namespace CoreModule.Models
         public RoomType RoomType { get; set; }
         public decimal Price { get; set; }
 
+        List<Reservation> reservations { get; set; }
 
 
     }
@@ -57,6 +144,7 @@ namespace CoreModule.Models
             Name = name;
             Price = price;
             daysOfWeek = new List<DayOfWeekForMeals>();
+            reservationMeals = new List<ReservationMeal>();
         }
 
         public int MealID { get; set; }
@@ -65,6 +153,7 @@ namespace CoreModule.Models
         public decimal Price { get; set; }
 
         public virtual List<DayOfWeekForMeals> daysOfWeek { get; set; }
+        public virtual List<ReservationMeal> reservationMeals { get; set; }
     }
 
     public class DayOfWeekForMeals
@@ -86,7 +175,7 @@ namespace CoreModule.Models
         public virtual Meal Meal { get; set; }
     }
 
-    public class Activity:BindableBase
+    public class Activity
     {
         public Activity(string name, decimal price, string description)
         {
@@ -97,18 +186,13 @@ namespace CoreModule.Models
         }
         public Activity()
         {
-
+            reservationActivities = new List<ReservationActivity>();
         }
 
-        private int activityID;
-        public int ActivityID
-        {
-            get { return activityID; }
-            set { SetProperty(ref activityID, value); }
-        }
-        //public int ActivityID { get; set; }
+        public int ActivityID { get; set; }       
         public string Name { get; set; }
         public decimal Price { get; set; }
         public string Description { get; set; }
+        public virtual List<ReservationActivity> reservationActivities { get; set; }
     }
 }
