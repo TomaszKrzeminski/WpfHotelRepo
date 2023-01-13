@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore.Update.Internal;
+﻿using CoreModule.ViewModels;
+using Microsoft.EntityFrameworkCore.Update.Internal;
 using Microsoft.Identity.Client;
 using Prism.Mvvm;
 using System;
@@ -43,12 +44,10 @@ namespace CoreModule.Models
         {
 
         }
-        public Reservation( DateTime startDate, DateTime endDate, int? userID, User user)
+        public Reservation( DateTime startDate, DateTime endDate)
         {            
             StartDate = startDate;
-            EndDate = endDate;
-            UserID = userID;
-            User = user;
+            EndDate = endDate;            
             reservationMeals = new List<ReservationMeal>();
             reservationActivities = new List<ReservationActivity>();
 
@@ -59,7 +58,7 @@ namespace CoreModule.Models
         public DateTime EndDate { get; set; }
 
         public int? UserID { get; set; }
-        public virtual User User { get; set; }
+        public virtual User User { get; set; }       
 
         public int? RoomID { get; set; }
         public virtual Room Room { get; set; }
@@ -71,10 +70,31 @@ namespace CoreModule.Models
 
     public class User
     {
-        public User( string firstName, string city, string street, string houseNumber, string postalCode, string personalNumber)
+        public User(AddUserModel user)
+        {
+            FirstName = user.FirstName;
+
+            LastName = user.LastName;
+
+            City = user.City;
+
+            Street = user.Street;
+
+            HouseNumber = user.HouseNumber;
+
+            PostalCode = user.PostalCode;
+
+            PersonalNumber = user.PersonalNumber;
+        }
+        public User()
+        {
+            reservations = new List<Reservation>();
+        }
+        public User( string firstName,string lastName, string city, string street, string houseNumber, string postalCode, string personalNumber)
         {
            
             FirstName = firstName;
+            LastName = lastName;
             City = city;
             Street = street;
             HouseNumber = houseNumber;
@@ -85,6 +105,7 @@ namespace CoreModule.Models
 
         public int UserID { get; set; }
         public string FirstName { get; set; }
+        public string LastName { get; set; }    
         public string City { get; set; }
         public string Street { get; set; }
         public string HouseNumber { get; set; }
@@ -127,7 +148,7 @@ namespace CoreModule.Models
         public RoomType RoomType { get; set; }
         public decimal Price { get; set; }
 
-        List<Reservation> reservations { get; set; }
+        public  List<Reservation> reservations { get; set; }
 
 
     }

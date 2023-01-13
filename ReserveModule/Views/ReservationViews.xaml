@@ -15,6 +15,6 @@
         <TabControl prism:RegionManager.RegionName="ContentReservation">
         
 
-    </TabControl>
+            </TabControl>
     
 </UserControl>

@@ -49,6 +49,8 @@ namespace CoreModule.Models
         public DbSet<DayOfWeekForMeals> DayOfWeekForMeals { get;set; }
         public DbSet<ReservationActivity> ReservationActivities { get; set; }
         public DbSet<ReservationMeal> ReservationMeals { get; set;}
+        public DbSet<User> Users { get; set; }
+        public DbSet<Reservation> Reservations { get; set; }
 
 
     }

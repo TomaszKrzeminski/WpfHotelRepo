@@ -1,5 +1,7 @@
-﻿using CoreModule.Models;
+﻿using CoreModule.Events;
+using CoreModule.Models;
 using Prism.Commands;
+using Prism.Events;
 using Prism.Mvvm;
 using System;
 using System.Collections.Generic;
@@ -128,8 +130,26 @@ namespace ReserveModule.ViewModels
         }
 
         IRepository repo;
-        public AddActivitiesViewModel(IRepository repo)
+        private DelegateCommand send;
+        public DelegateCommand Send =>
+            send ?? (send = new DelegateCommand(ExecuteSend, CanExecuteSend));
+
+        void ExecuteSend()
         {
+            List<Activity> activities = new List<Activity>();
+            activities.AddRange(AddedActivitiesList);
+            agr.GetEvent<ActivitySendEvent>().Publish(activities);
+        }
+
+        bool CanExecuteSend()
+        {
+            return true;
+        }
+        private IEventAggregator agr;
+        public AddActivitiesViewModel(IRepository repo,IEventAggregator agr)
+        {
+            this.agr = agr;
+            
             Header = "Aktywności";
             this.repo = repo;
             AddActivity = new DelegateCommand(ExecuteAddActivity, CanExecuteAddActivity);

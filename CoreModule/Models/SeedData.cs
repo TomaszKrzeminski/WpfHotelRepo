@@ -37,7 +37,11 @@ namespace CoreModule.Models
             return mealDay;
         }
 
-
+         public void AddUser(User user) 
+        {
+            ctx.Users.Add(user);
+            ctx.SaveChanges();        
+        }
 
         public void Seed()
         {
@@ -78,28 +82,59 @@ namespace CoreModule.Models
 
 
                 AddRoom(new Room(1, false, false, 1, RoomType.Single_Room,100));
-                AddRoom(new Room(1, true, false, 2, RoomType.Single_Room,120));
-                AddRoom(new Room(1, false, true, 1, RoomType.Single_Room,140));
+                AddRoom(new Room(1, false, true, 2, RoomType.Single_Room,120));
+                AddRoom(new Room(1, true, true, 1, RoomType.Single_Room,140));
                 AddRoom(new Room(1, true, true, 2, RoomType.Single_Room,160));
                 AddRoom(new Room(1, false, false, 1, RoomType.Double_Room,200));
 
-                AddRoom(new Room(2, false, false, 1, RoomType.Double_Room, 200));
-                AddRoom(new Room(2, true, false, 2, RoomType.Double_Room, 220));
-                AddRoom(new Room(2, false, true, 1, RoomType.Double_Room, 240));
+                AddRoom(new Room(2, false, true, 1, RoomType.Double_Room, 200));
+                AddRoom(new Room(2, true, true, 2, RoomType.Double_Room, 220));
+                AddRoom(new Room(2, true, true, 1, RoomType.Double_Room, 240));
                 AddRoom(new Room(2, true, true, 2, RoomType.Double_Room, 260));
-                AddRoom(new Room(3, false, false, 2, RoomType.Triple_Room, 300));
+                AddRoom(new Room(2, false, false, 2, RoomType.Triple_Room, 300));
 
-                AddRoom(new Room(1, false, false, 1, RoomType.Triple_Room, 300));
-                AddRoom(new Room(2, true, false, 2, RoomType.Triple_Room, 320));
-                AddRoom(new Room(1, false, true, 1, RoomType.Triple_Room, 340));
-                AddRoom(new Room(2, true, true, 2, RoomType.Triple_Room, 360));
-                AddRoom(new Room(1, false, false, 1, RoomType.Four_Person_Room, 300));
+                AddRoom(new Room(3, false, false, 1, RoomType.Triple_Room, 300));
+                AddRoom(new Room(3, true, true, 2, RoomType.Triple_Room, 320));
+                AddRoom(new Room(3, true, true, 3, RoomType.Triple_Room, 340));
+                AddRoom(new Room(3, true, true, 3, RoomType.Triple_Room, 360));
+                AddRoom(new Room(2, false, false, 1, RoomType.Four_Person_Room, 300));
 
-                AddRoom(new Room(1, false, false, 1, RoomType.Four_Person_Room, 400));
-                AddRoom(new Room(2, true, false, 2, RoomType.Four_Person_Room, 420));
-                AddRoom(new Room(1, false, true, 1, RoomType.Four_Person_Room, 440));
-                AddRoom(new Room(2, true, true, 2, RoomType.Four_Person_Room, 460));
-                AddRoom(new Room(2, false, false, 2, RoomType.Four_Person_Room, 500));
+                AddRoom(new Room(3, true, true, 1, RoomType.Four_Person_Room, 400));
+                AddRoom(new Room(3, true, true, 2, RoomType.Four_Person_Room, 420));
+                AddRoom(new Room(4, true, true, 3, RoomType.Four_Person_Room, 440));
+                AddRoom(new Room(4, true, true, 4, RoomType.Four_Person_Room, 460));
+                AddRoom(new Room(4, true, true, 4, RoomType.Four_Person_Room, 500));
+
+                AddRoom(new Room(1, false, false, 1, RoomType.Single_Room, 100));
+                AddRoom(new Room(1, false, false, 2, RoomType.Single_Room, 120));
+                AddRoom(new Room(1, false, false, 1, RoomType.Single_Room, 140));
+                AddRoom(new Room(1, false, false, 2, RoomType.Single_Room, 160));
+                AddRoom(new Room(1, false, false, 1, RoomType.Double_Room, 200));
+
+                AddRoom(new Room(2, true, true, 1, RoomType.Double_Room, 200));
+                AddRoom(new Room(2, true, true, 2, RoomType.Double_Room, 220));
+                AddRoom(new Room(2, true, true, 1, RoomType.Double_Room, 240));
+                AddRoom(new Room(2, true, true, 2, RoomType.Double_Room, 260));
+                AddRoom(new Room(2, true, true, 2, RoomType.Triple_Room, 300));
+
+                AddRoom(new Room(3, false, false, 1, RoomType.Triple_Room, 300));
+                AddRoom(new Room(3, false, false, 2, RoomType.Triple_Room, 320));
+                AddRoom(new Room(3, false, false, 3, RoomType.Triple_Room, 340));
+                AddRoom(new Room(3, false, false, 3, RoomType.Triple_Room, 360));
+                AddRoom(new Room(2, false, false, 1, RoomType.Four_Person_Room, 300));
+
+                AddRoom(new Room(3, false, false, 1, RoomType.Four_Person_Room, 400));
+                AddRoom(new Room(3, false, false, 2, RoomType.Four_Person_Room, 420));
+                AddRoom(new Room(4, false, false, 3, RoomType.Four_Person_Room, 440));
+                AddRoom(new Room(4, false, false, 4, RoomType.Four_Person_Room, 460));
+                AddRoom(new Room(4, false, false, 4, RoomType.Four_Person_Room, 500));
+
+                AddUser(new User("Tomasz", "Krzemiński", "Świecie", "Wojska Polskiego", "165/11", "86-100", "1112263331"));
+                AddUser(new User("Ewa", "Świerczyńska", "Świecie", "Aleja Jana Pawła II", "10/19", "86-100", "1112223931"));
+                AddUser(new User("Janusz", "Krzemiński", "Świecie", "Aleja Jana Pawła II", "10/19", "86-100", "1112263331"));
+                AddUser(new User("Martyna", "Kawka", "Gruczno", "Bydgoska", "5", "86-100", "1112523331"));
+                AddUser(new User("Adrianna", "Kamińska", "Wiąg", "Polna", "12", "86-100", "1112323331"));
+                AddUser(new User("Jan", "Kowalski", "Grudziądz", "Wiślana", "200/23", "86-200", "1112223321"));
 
 
 

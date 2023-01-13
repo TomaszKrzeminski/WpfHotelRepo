@@ -1,5 +1,7 @@
-﻿using CoreModule.Models;
+﻿using CoreModule.Events;
+using CoreModule.Models;
 using Prism.Commands;
+using Prism.Events;
 using Prism.Mvvm;
 using System;
 using System.Collections.Generic;
@@ -202,8 +204,29 @@ namespace ReserveModule.ViewModels
             return true;
         }
         IRepository repo;
-        public AddMealsViewModel(IRepository repo)
+        private IEventAggregator agr;
+
+        private DelegateCommand send;
+        public DelegateCommand Send =>
+            send ?? (send = new DelegateCommand(ExecuteSend, CanExecuteSend));
+
+        void ExecuteSend()
         {
+            List<Meal> meals = new List<Meal>();
+            meals.AddRange(BreakfastListChosen);
+            meals.AddRange(DinnerListChosen);
+            meals.AddRange(SupperListChosen);
+            agr.GetEvent<MealSendEvent>().Publish(meals);
+        }
+
+        bool CanExecuteSend()
+        {
+            return true;
+        }
+        public AddMealsViewModel(IRepository repo,IEventAggregator agr)
+        {
+            this.agr = agr;
+
             this.repo = repo;
             Header = "Posiłki";
             BreakfastList =new ObservableCollection<Meal>( repo.GetMealByDetails(MealType.Breakfast,null));

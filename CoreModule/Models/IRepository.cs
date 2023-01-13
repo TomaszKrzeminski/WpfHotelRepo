@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using CoreModule.ViewModels;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,6 +15,11 @@ namespace CoreModule.Models
         List<Meal> GetAllMeals();
         List<Activity> GetAllActivities();
         List<Meal> GetMealByDetails(MealType? type, DayOfWeekForMeals days);
+        List<User> GetAllUsers();
+        User AddUser(AddUserModel user);
+        bool AddReservation(int UserID, Room room, DateTime startDate, DateTime endDate, List<Activity> activities, List<Meal> meals);
+
+        bool CheckReservationForRoom(int RoomID,DateTime start,DateTime end);
     }
 
     public class Repository : IRepository
@@ -24,6 +30,83 @@ namespace CoreModule.Models
             this.ctx = ctx;
         }
 
+        public bool AddReservation(int UserID, Room room, DateTime startDate, DateTime endDate, List<Activity> activities, List<Meal> meals)
+        {
+            try
+            {
+                Reservation reservation = new Reservation(startDate, endDate);
+                ctx.Reservations.Add(reservation);
+                ctx.SaveChanges();               
+
+                if(activities!= null&&activities.Count()>0)
+                {
+
+                    foreach (var item in activities)
+                    {
+                        ReservationActivity a = new ReservationActivity() { Reservation = reservation, Activity = item };
+                        reservation.reservationActivities.Add(a);
+                        ctx.SaveChanges();
+                    }
+
+                }
+
+                if (meals != null && meals.Count() > 0)
+                {
+                    foreach (var item in meals)
+                    {
+                        ReservationMeal a = new ReservationMeal() { Reservation = reservation, Meal = item };
+                        reservation.reservationMeals.Add(a);
+                        ctx.SaveChanges();
+                    }
+                }
+
+
+                User userAdd = ctx.Users.Include(x=>x.reservations).Where(x=>x.UserID==UserID).FirstOrDefault();
+                userAdd.reservations.Add(reservation);
+                ctx.SaveChanges();
+
+                Room roomAdd = ctx.Rooms.Include(x=>x.reservations).Where(x => x.RoomID == room.RoomID).FirstOrDefault(); ;
+                roomAdd.reservations.Add(reservation);
+                ctx.SaveChanges();
+
+
+
+                return true;
+            }
+            catch(Exception ex)
+            {
+                return false;
+            }
+        }
+
+        public User AddUser(AddUserModel user)
+        {
+            try
+            {
+                User add = new User(user);
+                ctx.Users.Add(add);
+                return add;
+            }
+            catch(Exception ex)
+            {
+                return new User();
+            }
+        }
+        public bool CheckReservationForRoom(int RoomID,DateTime start,DateTime end)
+        {
+            try
+            {
+                bool check = ctx.Rooms.Include(x => x.reservations).Where(x => x.RoomID == RoomID).SelectMany(x => x.reservations).Any(x => x.StartDate <= start && x.StartDate <= end || x.EndDate >= start && x.EndDate <= end);
+                
+
+
+                return check;
+            }
+            catch(Exception ex)
+            {
+                return true;
+            }
+        }
         public List<Activity> GetAllActivities()
         {
             List<Activity> list = new List<Activity>();
@@ -63,7 +146,19 @@ namespace CoreModule.Models
                 return null;
             }
         }
+        public List<User> GetAllUsers()
+        {
+            try
+            {
+                return ctx.Users.ToList();
+            }
+            catch(Exception ex) 
+            {
 
+                return new List<User>();
+            
+            }
+        }
         public List<Meal> GetMealByDetails(MealType? type, DayOfWeekForMeals days)
         {
             List<Meal> list = new List<Meal>();

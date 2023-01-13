@@ -74,6 +74,7 @@
         </DataGrid>
         <StackPanel Margin="0,10" Grid.Row="4" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Top" Grid.Column="1">
             <Button Command="{Binding Path=Reset}">Wyczyść</Button>
+            <Button Command="{Binding Path=Send}">Zatwierdź</Button>
         </StackPanel>
 
 
