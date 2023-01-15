@@ -1,11 +1,9 @@
 C:\Users\tomas\OneDrive\Pulpit\WpfHotelRepo\ReserveModule\obj\Debug\net6.0-windows\ReserveModule.csproj.AssemblyReference.cache
 C:\Users\tomas\OneDrive\Pulpit\WpfHotelRepo\ReserveModule\obj\Debug\net6.0-windows\Views\AddActivities.baml
 C:\Users\tomas\OneDrive\Pulpit\WpfHotelRepo\ReserveModule\obj\Debug\net6.0-windows\Views\AddMeals.baml
-C:\Users\tomas\OneDrive\Pulpit\WpfHotelRepo\ReserveModule\obj\Debug\net6.0-windows\Views\ReserveRoom.baml
 C:\Users\tomas\OneDrive\Pulpit\WpfHotelRepo\ReserveModule\obj\Debug\net6.0-windows\Views\AddActivities.g.cs
 C:\Users\tomas\OneDrive\Pulpit\WpfHotelRepo\ReserveModule\obj\Debug\net6.0-windows\Views\AddMeals.g.cs
 C:\Users\tomas\OneDrive\Pulpit\WpfHotelRepo\ReserveModule\obj\Debug\net6.0-windows\Views\ReservationViews.g.cs
-C:\Users\tomas\OneDrive\Pulpit\WpfHotelRepo\ReserveModule\obj\Debug\net6.0-windows\Views\ReserveRoom.g.cs
 C:\Users\tomas\OneDrive\Pulpit\WpfHotelRepo\ReserveModule\obj\Debug\net6.0-windows\ReserveModule_MarkupCompile.cache
 C:\Users\tomas\OneDrive\Pulpit\WpfHotelRepo\ReserveModule\obj\Debug\net6.0-windows\ReserveModule_MarkupCompile.lref
 C:\Users\tomas\OneDrive\Pulpit\WpfHotelRepo\ReserveModule\bin\Debug\net6.0-windows\ReserveModule.deps.json
@@ -13,6 +11,8 @@ C:\Users\tomas\OneDrive\Pulpit\WpfHotelRepo\ReserveModule\bin\Debug\net6.0-windo
 C:\Users\tomas\OneDrive\Pulpit\WpfHotelRepo\ReserveModule\bin\Debug\net6.0-windows\ReserveModule.pdb
 C:\Users\tomas\OneDrive\Pulpit\WpfHotelRepo\ReserveModule\bin\Debug\net6.0-windows\CoreModule.dll
 C:\Users\tomas\OneDrive\Pulpit\WpfHotelRepo\ReserveModule\bin\Debug\net6.0-windows\CoreModule.pdb
+C:\Users\tomas\OneDrive\Pulpit\WpfHotelRepo\ReserveModule\obj\Debug\net6.0-windows\Views\ReserveRoom.baml
+C:\Users\tomas\OneDrive\Pulpit\WpfHotelRepo\ReserveModule\obj\Debug\net6.0-windows\Views\ReserveRoom.g.cs
 C:\Users\tomas\OneDrive\Pulpit\WpfHotelRepo\ReserveModule\obj\Debug\net6.0-windows\Views\ReservationViews.baml
 C:\Users\tomas\OneDrive\Pulpit\WpfHotelRepo\ReserveModule\obj\Debug\net6.0-windows\ReserveModule.g.resources
 C:\Users\tomas\OneDrive\Pulpit\WpfHotelRepo\ReserveModule\obj\Debug\net6.0-windows\ReserveModule.GeneratedMSBuildEditorConfig.editorconfig

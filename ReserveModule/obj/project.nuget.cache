@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "JbHKc2j6YbAq0+MWA2t4Fgq0gB+FXTUWmI4x/ygTTA//RyFsurbHhgBMAh+nF+yWKsg9QlOBU0ZgCfo/hffwtA==",
+  "dgSpecHash": "nPx1MDS5h++7qQ85sg688wc8Q2iBr4Z54q2gb/7j+XOpL7aKzBABwr9Bxa1Ais7YXzFsoCVxNSIoSKOeLW+HHA==",
   "success": true,
   "projectFilePath": "C:\\Users\\tomas\\OneDrive\\Pulpit\\WpfHotelRepo\\ReserveModule\\ReserveModule.csproj",
   "expectedPackageFiles": [
@@ -72,7 +72,8 @@
     "C:\\Users\\tomas\\.nuget\\packages\\system.text.json\\4.7.2\\system.text.json.4.7.2.nupkg.sha512",
     "C:\\Users\\tomas\\.nuget\\packages\\system.threading.tasks\\4.3.0\\system.threading.tasks.4.3.0.nupkg.sha512",
     "C:\\Users\\tomas\\.nuget\\packages\\system.threading.tasks.extensions\\4.5.4\\system.threading.tasks.extensions.4.5.4.nupkg.sha512",
-    "C:\\Users\\tomas\\.nuget\\packages\\system.windows.extensions\\5.0.0\\system.windows.extensions.5.0.0.nupkg.sha512"
+    "C:\\Users\\tomas\\.nuget\\packages\\system.windows.extensions\\5.0.0\\system.windows.extensions.5.0.0.nupkg.sha512",
+    "C:\\Users\\tomas\\.nuget\\packages\\timeperiod\\0.2.0\\timeperiod.0.2.0.nupkg.sha512"
   ],
   "logs": []
 }

@@ -95,7 +95,9 @@
         </DataGrid>
         <StackPanel Grid.Row="2" Grid.ColumnSpan="3" HorizontalAlignment="Center" Orientation="Horizontal">
             <Label Margin="0,2" VerticalAlignment="Stretch" FontSize="20">Wybrane</Label>
-            <Label Content="{Binding Path=Count}" Margin="0,10" VerticalAlignment="Stretch"> </Label>          
+            <Label Content="{Binding Path=Count}" Margin="0,10" VerticalAlignment="Stretch"> </Label>
+            <Label  Margin="0,10" VerticalAlignment="Stretch">/</Label>
+            <Label Content="{Binding Path=CountMax}" Margin="0,10" VerticalAlignment="Stretch"></Label>
             <Label Margin="0,10" VerticalAlignment="Stretch">Dopłata :</Label>
             <Label Content="{Binding Path=Price}" Margin="0,10" VerticalAlignment="Stretch"></Label>
         </StackPanel>

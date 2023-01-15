@@ -41,14 +41,14 @@ namespace ReserveModule.ViewModels
         public DateTime ReservationFrom
         {
             get { return reservationFrom; }
-            set { SetProperty(ref reservationFrom, value); FilteringRooms.Execute(); }
-        }
+            set { SetProperty(ref reservationFrom, value); FilteringRooms.Execute(); Calculate(); }
+        } 
 
         private DateTime reservationTo;
         public DateTime ReservationTo
         {
             get { return reservationTo; }
-            set { SetProperty(ref reservationTo, value); FilteringRooms.Execute(); }
+            set { SetProperty(ref reservationTo, value); FilteringRooms.Execute(); Calculate(); }
         }
         private Room roomToAdd;
         public Room RoomToAdd
@@ -168,16 +168,44 @@ namespace ReserveModule.ViewModels
         }
         List<Meal> meals { get; set; }
         List<Activity> activities { get; set; }
+
+        
+        void Calculate()
+        {
+            int DaysCount = 0;
+            if (ReservationTo != null && reservationFrom != null&&ReservationFrom<ReservationTo)
+            {
+                DaysCount = (ReservationTo.Date - reservationFrom.Date).Days;
+            }
+            agr.GetEvent<MealCountEvent>().Publish(DaysCount);
+        }
         bool CanExecuteFilteringRooms()
         {
             return true;
         }
         private IEventAggregator agr;
+
+        private DelegateCommand showAll;
+        public DelegateCommand ShowAll =>
+            showAll ?? (showAll = new DelegateCommand(ExecuteShowAll, CanExecuteShowAll));
+
+        void ExecuteShowAll()
+        {
+            List<Room> list=repository.GetAvailableRooms(ReservationFrom, ReservationTo);
+            RoomList.Clear();
+            RoomList.AddRange(list);
+        }
+
+        bool CanExecuteShowAll()
+        {
+            return true;
+        }
         public ReserveRoomViewModel(IRepository repository, HotelContext ctx,IEventAggregator agr)
         {
             this.agr = agr;
             agr.GetEvent<MealSendEvent>().Subscribe(GetMeals);
             agr.GetEvent<ActivitySendEvent>().Subscribe(GetEvents);
+           
             this.repository = repository;
             Header = "Rezerwuj pokój";
 
@@ -187,7 +215,9 @@ namespace ReserveModule.ViewModels
             SelectedPeople = RadioOptions.Option1;
             SelectedRoom = RadioOptions.Option1;
             ReservationFrom = DateTime.Now;
-            ReservationTo= DateTime.Now.AddDays(1);
+            ReservationTo = DateTime.Now.AddDays(1);
+            Calculate();
+            
         }
 
         private void GetEvents(List<Activity> list)

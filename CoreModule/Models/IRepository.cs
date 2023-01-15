@@ -6,6 +6,7 @@ using System.Linq;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
+using TimePeriod;
 
 namespace CoreModule.Models
 {
@@ -20,6 +21,8 @@ namespace CoreModule.Models
         bool AddReservation(int UserID, Room room, DateTime startDate, DateTime endDate, List<Activity> activities, List<Meal> meals);
 
         bool CheckReservationForRoom(int RoomID,DateTime start,DateTime end);
+
+        List<Room> GetAvailableRooms(DateTime start, DateTime end);
     }
 
     public class Repository : IRepository
@@ -92,21 +95,47 @@ namespace CoreModule.Models
                 return new User();
             }
         }
-        public bool CheckReservationForRoom(int RoomID,DateTime start,DateTime end)
+        //public bool CheckReservationForRoom(int RoomID,DateTime start,DateTime end)
+        //{
+        //    try
+        //    {
+        //        bool check = ctx.Rooms.Include(x => x.reservations).Where(x => x.RoomID == RoomID).SelectMany(x => x.reservations).Any(x => x.StartDate <= start && x.StartDate <= end || x.EndDate >= start && x.EndDate <= end);
+
+
+
+        //        return check;
+        //    }
+        //    catch(Exception ex)
+        //    {
+        //        return true;
+        //    }
+        //}
+
+        public bool CheckReservationForRoom(int RoomID, DateTime start, DateTime end)
         {
             try
             {
-                bool check = ctx.Rooms.Include(x => x.reservations).Where(x => x.RoomID == RoomID).SelectMany(x => x.reservations).Any(x => x.StartDate <= start && x.StartDate <= end || x.EndDate >= start && x.EndDate <= end);
-                
+               List<Reservation> list = ctx.Rooms.Include(x => x.reservations).Where(x => x.RoomID == RoomID).SelectMany(x => x.reservations).Where(x => x.EndDate > start ).ToList();
+                TimeRange period = new TimeRange(start,end);
+
+                foreach (var item in list)
+                {                   
+                    bool check= period.OverlapsWith(new TimeRange(item.StartDate, item.EndDate));                 
+                    if(check)
+                    {
+                        return true;
+                    }
+                }
 
 
-                return check;
+                return false;
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 return true;
             }
         }
+
         public List<Activity> GetAllActivities()
         {
             List<Activity> list = new List<Activity>();
@@ -159,6 +188,42 @@ namespace CoreModule.Models
             
             }
         }
+
+        public List<Room> GetAvailableRooms(DateTime start, DateTime end)
+        {
+            List<Room> rooms=new List<Room>();
+            try
+            {
+                List<Room> roomslist = ctx.Rooms.Include(x => x.reservations).ToList();
+                List<Room> except = new List<Room>();
+
+                foreach (var r in roomslist)
+                {
+                    bool check = CheckReservationForRoom(r.RoomID, start, end);
+                    if(check)
+                    {
+                        except.Add(r);
+                    }
+                }
+                
+
+               if(except.Count > 0) 
+                {
+                    rooms = ctx.Rooms.AsEnumerable().Except(except).ToList();
+                }
+               else
+                {
+                    rooms = ctx.Rooms.ToList();
+                }
+                return rooms;
+               
+            }
+            catch(Exception ex)
+            {
+                return rooms;
+            }
+        }
+
         public List<Meal> GetMealByDetails(MealType? type, DayOfWeekForMeals days)
         {
             List<Meal> list = new List<Meal>();

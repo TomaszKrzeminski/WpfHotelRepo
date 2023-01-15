@@ -15,4 +15,8 @@ namespace CoreModule.Events
     {
         
     }
+    public class MealCountEvent : PubSubEvent<int>
+    {
+
+    }
 }

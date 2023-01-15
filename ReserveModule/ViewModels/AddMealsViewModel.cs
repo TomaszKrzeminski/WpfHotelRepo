@@ -136,36 +136,55 @@ namespace ReserveModule.ViewModels
 
         private DelegateCommand addBreakFast;
         public DelegateCommand AddBreakFast =>
-            addBreakFast ?? (addBreakFast = new DelegateCommand(ExecuteAddBreakFast, CanExecuteAddBreakFast));
+            addBreakFast ?? (addBreakFast = new DelegateCommand(ExecuteAddBreakFast, CanExecuteAddBreakFast).ObservesProperty(() => CountMax).ObservesProperty(()=>BreakfastListChosen));
+
+
+        public bool CheckCount(ObservableCollection<Meal> list)
+        {
+            int count = CountMax / 3;
+            if (count > list.Count())
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
         void ExecuteAddBreakFast()
         {
             AddToList(SelectedBreakfastList, BreakfastList, BreakfastListChosen);
         }
         bool CanExecuteAddBreakFast()
         {
-            return true;
+
+          return  CheckCount(BreakfastListChosen);
+            
         }
         private DelegateCommand addDinner;
         public DelegateCommand AddDinner =>
-            addDinner ?? (addDinner = new DelegateCommand(ExecuteAddDinner, CanExecuteAddDinner));
+            addDinner ?? (addDinner = new DelegateCommand(ExecuteAddDinner, CanExecuteAddDinner).ObservesProperty(()=>CountMax).ObservesProperty(()=>DinnerListChosen));
         void ExecuteAddDinner()
         {
             AddToList(SelectedDinnerList, DinnerList, DinnerListChosen);
         }
         bool CanExecuteAddDinner()
         {
-            return true;
+           return CheckCount(DinnerListChosen);
+
         }
         private DelegateCommand addSupper;
         public DelegateCommand AddSupper =>
-            addSupper ?? (addSupper = new DelegateCommand(ExecuteAddSupper, CanExecuteAddSupper));
+            addSupper ?? (addSupper = new DelegateCommand(ExecuteAddSupper, CanExecuteAddSupper).ObservesProperty(() => CountMax).ObservesProperty(()=>SupperListChosen));
         void ExecuteAddSupper()
         {
             AddToList(SelectedSupperList, SupperList, SupperListChosen);
         }
         bool CanExecuteAddSupper()
         {
-            return true;
+           return   CheckCount(SupperListChosen);
+
         }
 
         private DelegateCommand removeBreakfast;
@@ -226,6 +245,7 @@ namespace ReserveModule.ViewModels
         public AddMealsViewModel(IRepository repo,IEventAggregator agr)
         {
             this.agr = agr;
+           
 
             this.repo = repo;
             Header = "Posiłki";
@@ -237,9 +257,20 @@ namespace ReserveModule.ViewModels
             BreakfastListChosen = new ObservableCollection<Meal>();
             DinnerListChosen =   new ObservableCollection<Meal>();
             SupperListChosen =   new ObservableCollection<Meal>();
-
+            agr.GetEvent<MealCountEvent>().Subscribe(GetCount);
+            CountMax = 3;
             Calculate();
         }
 
+        private int countMax;
+        public int CountMax
+        {
+            get { return countMax; }
+            set { SetProperty(ref countMax, value); }
+        }
+        private void GetCount(int obj)
+        {
+            CountMax = obj*3;
+        }
     }
 }

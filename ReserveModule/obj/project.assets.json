@@ -1160,6 +1160,15 @@
           }
         }
       },
+      "TimePeriod/0.2.0": {
+        "type": "package",
+        "compile": {
+          "lib/net6.0/TimePeriod.dll": {}
+        },
+        "runtime": {
+          "lib/net6.0/TimePeriod.dll": {}
+        }
+      },
       "CoreModule/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
@@ -1169,7 +1178,8 @@
           "Microsoft.EntityFrameworkCore.SqlServer": "7.0.1",
           "Prism.Core": "7.2.0.1422",
           "Prism.DryIoc": "7.2.0.1422",
-          "Prism.Wpf": "7.2.0.1422"
+          "Prism.Wpf": "7.2.0.1422",
+          "TimePeriod": "0.2.0"
         },
         "compile": {
           "bin/placeholder/CoreModule.dll": {}
@@ -3542,6 +3552,19 @@
         "system.windows.extensions.nuspec",
         "useSharedDesignerContext.txt",
         "version.txt"
+      ]
+    },
+    "TimePeriod/0.2.0": {
+      "sha512": "xXWJRNTZeKkoAJRlbA+pkItVmrqZBU1yidddEoRPdgnTUozIHDflfQpa/MeJesVvinQqYkpeEmuj76meYtYf9w==",
+      "type": "package",
+      "path": "timeperiod/0.2.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net6.0/TimePeriod.dll",
+        "nindra.png",
+        "timeperiod.0.2.0.nupkg.sha512",
+        "timeperiod.nuspec"
       ]
     },
     "CoreModule/1.0.0": {
