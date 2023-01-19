@@ -270,6 +270,7 @@ namespace ReserveModule.ViewModels
         }
         private void GetCount(int obj)
         {
+            Reset.Execute();
             CountMax = obj*3;
         }
     }

@@ -1,5 +1,6 @@
 ﻿using CoreModule.Models;
 using Prism.Mvvm;
+using Prism.Regions;
 using ReserveModule.Views;
 using System;
 using System.Collections.Generic;
@@ -12,7 +13,7 @@ using System.Windows.Controls;
 
 namespace ReserveModule.ViewModels
 {
-    public class ReservationViewsViewModel:BindableBase
+    public class ReservationViewsViewModel : BindableBase
     {
         //HotelContext ctx;
         //public ReservationViewsViewModel(HotelContext ctx)
@@ -21,10 +22,6 @@ namespace ReserveModule.ViewModels
         //    SeedData s = new SeedData(ctx);
         //    s.Seed();
         //}     
-
-
     }
-
-
 
 }

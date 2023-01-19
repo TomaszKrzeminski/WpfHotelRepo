@@ -4,6 +4,7 @@ using Microsoft.Identity.Client;
 using Prism.Mvvm;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -17,7 +18,9 @@ namespace CoreModule.Models
         public ReservationActivity()
         {
 
-        }
+        }        
+
+        public int Count { get; set; }
         public int ReservationID { get; set; }
         public Reservation Reservation { get; set; }
 
@@ -31,6 +34,9 @@ namespace CoreModule.Models
         {
 
         }
+
+        public int Count { get; set; }
+
         public int ReservationID { get; set; }
         public Reservation Reservation { get; set; }
 
@@ -66,8 +72,6 @@ namespace CoreModule.Models
         public virtual List<ReservationActivity> reservationActivities { get; set; }
         public virtual List<ReservationMeal> reservationMeals { get; set; }
     }
-
-
     public class User
     {
         public User(AddUserModel user)

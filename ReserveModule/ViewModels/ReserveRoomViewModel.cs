@@ -5,6 +5,7 @@ using CoreModule.ViewModels;
 using Prism.Commands;
 using Prism.Events;
 using Prism.Mvvm;
+using Prism.Regions;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -14,7 +15,7 @@ using System.Threading.Tasks;
 
 namespace ReserveModule.ViewModels
 {
-    public class ReserveRoomViewModel : BindableBase
+    public class ReserveRoomViewModel : BindableBase,INavigationAware
     {
         IRepository repository;
         private string header;
@@ -118,11 +119,80 @@ namespace ReserveModule.ViewModels
         public DelegateCommand ReserveRoom =>
             reserveRoom ?? (reserveRoom = new DelegateCommand(ExecuteReserveRoom, CanExecuteReserveRoom));
 
+        //void ExecuteReserveRoom()
+        //{
+
+        //    repository.AddReservation(SelectedUser.UserID, RoomToAdd, ReservationFrom,ReservationTo,activities,meals);
+        //    filteringRooms.Execute();
+        //}
+
         void ExecuteReserveRoom()
         {
-           
-            repository.AddReservation(SelectedUser.UserID, RoomToAdd, ReservationFrom,ReservationTo,activities,meals);
-            filteringRooms.Execute();
+            if(meals.Count == 0) 
+            {
+
+                meals = GetRandomMeals(meals);
+            
+            }
+            AddReservationModel model = new AddReservationModel(SelectedUser.UserID, RoomToAdd, ReservationFrom, ReservationTo, activities, meals);
+            model.UserName = SelectedUser.FirstName;
+            model.UserSurname= SelectedUser.LastName;
+            model.PersonalNumber= SelectedUser.PersonalNumber;
+            //model.ActivitiesCost = activities.Sum(x => x.Price);
+            //model.MealsCost = meals.Sum(x => x.Price);
+            //model.FinalCost = model.ActivitiesCost + model.MealsCost + (RoomToAdd.Price * Calculate());
+            NavigationParameters par = new NavigationParameters();
+            par.Add("AddReservation", model);
+            manager.RequestNavigate("ContentReserveMain", "ShowSummary", par);
+
+            
+        }
+
+        private List<Meal> GetRandomMeals(List<Meal> meals)
+        {
+
+            int count = Calculate();
+            int breakfast = 0;
+            int dinner = 0;
+            int supper = 0;
+
+            foreach (var item in meals)
+            {
+                if(item.type==MealType.Breakfast)
+                {
+                    breakfast++;
+                }
+                else if(item.type==MealType.Dinner) 
+                {
+                    dinner++;
+                }
+                else
+                {
+                    supper++;
+                }
+            }
+
+
+            if(breakfast<count)
+            {
+                int x = count - breakfast;
+                for (int i = 0; i < x; i++)
+                {
+                    meals.Add();
+                }
+            }
+
+            if(dinner<count)
+            {
+
+            }
+
+            if(supper<count)
+            {
+
+            }
+
+
         }
 
         bool CanExecuteReserveRoom()
@@ -167,17 +237,17 @@ namespace ReserveModule.ViewModels
 
         }
         List<Meal> meals { get; set; }
-        List<Activity> activities { get; set; }
-
-        
-        void Calculate()
+        List<Activity> activities { get; set; }        
+        int Calculate()
         {
             int DaysCount = 0;
             if (ReservationTo != null && reservationFrom != null&&ReservationFrom<ReservationTo)
             {
                 DaysCount = (ReservationTo.Date - reservationFrom.Date).Days;
             }
+            
             agr.GetEvent<MealCountEvent>().Publish(DaysCount);
+            return DaysCount;
         }
         bool CanExecuteFilteringRooms()
         {
@@ -200,11 +270,14 @@ namespace ReserveModule.ViewModels
         {
             return true;
         }
-        public ReserveRoomViewModel(IRepository repository, HotelContext ctx,IEventAggregator agr)
+        IRegionManager manager;
+        public ReserveRoomViewModel(IRepository repository, HotelContext ctx,IEventAggregator agr,IRegionManager manager)
         {
+            this.manager = manager;
             this.agr = agr;
             agr.GetEvent<MealSendEvent>().Subscribe(GetMeals);
             agr.GetEvent<ActivitySendEvent>().Subscribe(GetEvents);
+            agr.GetEvent<ResetReservationEvent>().Subscribe(ResetView);
            
             this.repository = repository;
             Header = "Rezerwuj pokój";
@@ -220,6 +293,15 @@ namespace ReserveModule.ViewModels
             
         }
 
+        private void ResetView(bool obj)
+        {
+            if(obj==true)
+            {
+                ReservationFrom = DateTime.Now;
+                ReservationTo = DateTime.Now.AddDays(1);
+            }
+        }
+
         private void GetEvents(List<Activity> list)
         {
             activities = list;
@@ -228,6 +310,21 @@ namespace ReserveModule.ViewModels
         private void GetMeals(List<Meal> list)
         {
             meals = list;
+        }
+
+        public void OnNavigatedTo(NavigationContext navigationContext)
+        {
+            FilteringRooms.Execute();
+        }
+
+        public bool IsNavigationTarget(NavigationContext navigationContext)
+        {
+            return false;
+        }
+
+        public void OnNavigatedFrom(NavigationContext navigationContext)
+        {
+            FilteringRooms.Execute();
         }
     }
 }

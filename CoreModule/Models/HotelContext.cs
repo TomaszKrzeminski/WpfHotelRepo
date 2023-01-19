@@ -35,12 +35,13 @@ namespace CoreModule.Models
             modelBuilder.Entity<ReservationActivity>().HasKey(sc => new { sc.ReservationID, sc.ActivityID });
             modelBuilder.Entity<ReservationMeal>().HasKey(sc => new { sc.ReservationID, sc.MealID });
 
-            //modelBuilder.Entity<BookAuthor>().HasKey(sc => new { sc.BookID, sc.AuthorID });
+          
         }
 
         protected override void OnConfiguring(
              DbContextOptionsBuilder optionsBuilder)
         {
+            optionsBuilder.EnableSensitiveDataLogging();
             optionsBuilder.UseSqlServer(@"Server=(localdb)\MSSQLLocalDB;Database=HotelWpfApp;Trusted_Connection=True;");
         }
         public DbSet<Room> Rooms { get; set; }

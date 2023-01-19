@@ -19,4 +19,11 @@ namespace CoreModule.Events
     {
 
     }
+
+    public class ResetReservationEvent : PubSubEvent<bool>
+    {
+
+    }
+
+
 }

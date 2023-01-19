@@ -157,6 +157,15 @@ namespace ReserveModule.ViewModels
             ActivitiesList = new ObservableCollection<Activity>(repo.GetAllActivities());
             AddedActivitiesList = new ObservableCollection<Activity>();
             Reset = new DelegateCommand(ExecuteReset, CanExecuteReset);
+            agr.GetEvent<ResetReservationEvent>().Subscribe(ResetView);
+        }
+
+        private void ResetView(bool obj)
+        {
+            if(obj)
+            {
+                Reset.Execute();
+            }
         }
     }
 }

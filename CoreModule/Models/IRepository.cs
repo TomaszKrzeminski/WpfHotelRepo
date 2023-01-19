@@ -19,10 +19,9 @@ namespace CoreModule.Models
         List<User> GetAllUsers();
         User AddUser(AddUserModel user);
         bool AddReservation(int UserID, Room room, DateTime startDate, DateTime endDate, List<Activity> activities, List<Meal> meals);
-
         bool CheckReservationForRoom(int RoomID,DateTime start,DateTime end);
-
         List<Room> GetAvailableRooms(DateTime start, DateTime end);
+        Meal GetRandomMeal(bool paid);
     }
 
     public class Repository : IRepository
@@ -32,37 +31,74 @@ namespace CoreModule.Models
         {
             this.ctx = ctx;
         }
-
         public bool AddReservation(int UserID, Room room, DateTime startDate, DateTime endDate, List<Activity> activities, List<Meal> meals)
         {
             try
             {
                 Reservation reservation = new Reservation(startDate, endDate);
                 ctx.Reservations.Add(reservation);
-                ctx.SaveChanges();               
+                ctx.SaveChanges();
+
+
+                List<ReservationActivity> list1 = new List<ReservationActivity>();
 
                 if(activities!= null&&activities.Count()>0)
                 {
 
-                    foreach (var item in activities)
+                    for ( int i=0;i<activities.Count;i++)
                     {
-                        ReservationActivity a = new ReservationActivity() { Reservation = reservation, Activity = item };
-                        reservation.reservationActivities.Add(a);
-                        ctx.SaveChanges();
+                        if (list1.Any(x => x.ActivityID == activities[i].ActivityID))
+                        {
+                            ReservationActivity x = list1.Where(x => x.ActivityID == activities[i].ActivityID).First();
+                            int count = x.Count;
+                            count++;
+                            x.Count = count;
+                        }
+                        else
+                        {
+                            ReservationActivity a = new ReservationActivity() { Reservation = reservation, ReservationID = reservation.ReservationID, Activity = activities[i], ActivityID = activities[i].ActivityID, Count = 1 };
+                            list1.Add(a);
+                        }                        
+                      
                     }
 
                 }
 
-                if (meals != null && meals.Count() > 0)
+                foreach (var item in list1)
                 {
-                    foreach (var item in meals)
-                    {
-                        ReservationMeal a = new ReservationMeal() { Reservation = reservation, Meal = item };
-                        reservation.reservationMeals.Add(a);
-                        ctx.SaveChanges();
-                    }
+                    reservation.reservationActivities.Add(item);
+                    ctx.SaveChanges();
                 }
 
+                List<ReservationMeal> list2 = new List<ReservationMeal>();
+
+                if (meals != null && meals.Count > 0)
+                {
+
+                    for (int i = 0; i < meals.Count; i++)
+                    {
+                        if (list2.Any(x => x.MealID == meals[i].MealID))
+                        {
+                            ReservationMeal x = list2.Where(x => x.MealID == meals[i].MealID).First();
+                            int count = x.Count;
+                            count++;
+                            x.Count = count;
+                        }
+                        else
+                        {
+                            ReservationMeal a = new ReservationMeal() { Reservation = reservation, ReservationID = reservation.ReservationID, Meal = meals[i], MealID = meals[i].MealID, Count = 1 };
+                            list2.Add(a);
+                        }
+                    }                   
+                       
+                    
+                }
+
+                foreach (var item in list2)
+                {
+                    reservation.reservationMeals.Add(item);
+                    ctx.SaveChanges();
+                }
 
                 User userAdd = ctx.Users.Include(x=>x.reservations).Where(x=>x.UserID==UserID).FirstOrDefault();
                 userAdd.reservations.Add(reservation);
@@ -81,7 +117,6 @@ namespace CoreModule.Models
                 return false;
             }
         }
-
         public User AddUser(AddUserModel user)
         {
             try
@@ -95,21 +130,7 @@ namespace CoreModule.Models
                 return new User();
             }
         }
-        //public bool CheckReservationForRoom(int RoomID,DateTime start,DateTime end)
-        //{
-        //    try
-        //    {
-        //        bool check = ctx.Rooms.Include(x => x.reservations).Where(x => x.RoomID == RoomID).SelectMany(x => x.reservations).Any(x => x.StartDate <= start && x.StartDate <= end || x.EndDate >= start && x.EndDate <= end);
-
-
-
-        //        return check;
-        //    }
-        //    catch(Exception ex)
-        //    {
-        //        return true;
-        //    }
-        //}
+       
 
         public bool CheckReservationForRoom(int RoomID, DateTime start, DateTime end)
         {
@@ -250,6 +271,13 @@ namespace CoreModule.Models
             }
         }
 
-       
+        public Meal GetRandomMeal(bool paid)
+        {
+           
+            List<Meal> meal=ctx.Meals.Where(x=>x.Price>0).
+
+
+
+        }
     }
 }

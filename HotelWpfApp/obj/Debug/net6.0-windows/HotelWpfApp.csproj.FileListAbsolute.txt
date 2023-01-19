@@ -1,8 +1,3 @@
-C:\Users\tomas\OneDrive\Pulpit\WpfHotelRepo\HotelWpfApp\obj\Debug\net6.0-windows\HotelWpfApp.csproj.AssemblyReference.cache
-C:\Users\tomas\OneDrive\Pulpit\WpfHotelRepo\HotelWpfApp\obj\Debug\net6.0-windows\Views\ShellWindow.g.cs
-C:\Users\tomas\OneDrive\Pulpit\WpfHotelRepo\HotelWpfApp\obj\Debug\net6.0-windows\App.g.cs
-C:\Users\tomas\OneDrive\Pulpit\WpfHotelRepo\HotelWpfApp\obj\Debug\net6.0-windows\HotelWpfApp_MarkupCompile.cache
-C:\Users\tomas\OneDrive\Pulpit\WpfHotelRepo\HotelWpfApp\obj\Debug\net6.0-windows\HotelWpfApp_MarkupCompile.lref
 C:\Users\tomas\OneDrive\Pulpit\WpfHotelRepo\HotelWpfApp\bin\Debug\net6.0-windows\HotelWpfApp.exe
 C:\Users\tomas\OneDrive\Pulpit\WpfHotelRepo\HotelWpfApp\bin\Debug\net6.0-windows\HotelWpfApp.deps.json
 C:\Users\tomas\OneDrive\Pulpit\WpfHotelRepo\HotelWpfApp\bin\Debug\net6.0-windows\HotelWpfApp.runtimeconfig.json
@@ -43,6 +38,8 @@ C:\Users\tomas\OneDrive\Pulpit\WpfHotelRepo\HotelWpfApp\bin\Debug\net6.0-windows
 C:\Users\tomas\OneDrive\Pulpit\WpfHotelRepo\HotelWpfApp\bin\Debug\net6.0-windows\System.IdentityModel.Tokens.Jwt.dll
 C:\Users\tomas\OneDrive\Pulpit\WpfHotelRepo\HotelWpfApp\bin\Debug\net6.0-windows\System.Memory.Data.dll
 C:\Users\tomas\OneDrive\Pulpit\WpfHotelRepo\HotelWpfApp\bin\Debug\net6.0-windows\System.Runtime.Caching.dll
+C:\Users\tomas\OneDrive\Pulpit\WpfHotelRepo\HotelWpfApp\bin\Debug\net6.0-windows\TimePeriod.dll
+C:\Users\tomas\OneDrive\Pulpit\WpfHotelRepo\HotelWpfApp\bin\Debug\net6.0-windows\Itenso.TimePeriod.dll
 C:\Users\tomas\OneDrive\Pulpit\WpfHotelRepo\HotelWpfApp\bin\Debug\net6.0-windows\runtimes\unix\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll
 C:\Users\tomas\OneDrive\Pulpit\WpfHotelRepo\HotelWpfApp\bin\Debug\net6.0-windows\runtimes\win\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll
 C:\Users\tomas\OneDrive\Pulpit\WpfHotelRepo\HotelWpfApp\bin\Debug\net6.0-windows\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.dll
@@ -58,6 +55,11 @@ C:\Users\tomas\OneDrive\Pulpit\WpfHotelRepo\HotelWpfApp\bin\Debug\net6.0-windows
 C:\Users\tomas\OneDrive\Pulpit\WpfHotelRepo\HotelWpfApp\bin\Debug\net6.0-windows\NavigationModule.pdb
 C:\Users\tomas\OneDrive\Pulpit\WpfHotelRepo\HotelWpfApp\bin\Debug\net6.0-windows\OptionsModule.pdb
 C:\Users\tomas\OneDrive\Pulpit\WpfHotelRepo\HotelWpfApp\bin\Debug\net6.0-windows\ReserveModule.pdb
+C:\Users\tomas\OneDrive\Pulpit\WpfHotelRepo\HotelWpfApp\obj\Debug\net6.0-windows\HotelWpfApp.csproj.AssemblyReference.cache
+C:\Users\tomas\OneDrive\Pulpit\WpfHotelRepo\HotelWpfApp\obj\Debug\net6.0-windows\Views\ShellWindow.g.cs
+C:\Users\tomas\OneDrive\Pulpit\WpfHotelRepo\HotelWpfApp\obj\Debug\net6.0-windows\App.g.cs
+C:\Users\tomas\OneDrive\Pulpit\WpfHotelRepo\HotelWpfApp\obj\Debug\net6.0-windows\HotelWpfApp_MarkupCompile.cache
+C:\Users\tomas\OneDrive\Pulpit\WpfHotelRepo\HotelWpfApp\obj\Debug\net6.0-windows\HotelWpfApp_MarkupCompile.lref
 C:\Users\tomas\OneDrive\Pulpit\WpfHotelRepo\HotelWpfApp\obj\Debug\net6.0-windows\Views\ShellWindow.baml
 C:\Users\tomas\OneDrive\Pulpit\WpfHotelRepo\HotelWpfApp\obj\Debug\net6.0-windows\HotelWpfApp.g.resources
 C:\Users\tomas\OneDrive\Pulpit\WpfHotelRepo\HotelWpfApp\obj\Debug\net6.0-windows\HotelWpfApp.GeneratedMSBuildEditorConfig.editorconfig
@@ -70,5 +72,3 @@ C:\Users\tomas\OneDrive\Pulpit\WpfHotelRepo\HotelWpfApp\obj\Debug\net6.0-windows
 C:\Users\tomas\OneDrive\Pulpit\WpfHotelRepo\HotelWpfApp\obj\Debug\net6.0-windows\HotelWpfApp.pdb
 C:\Users\tomas\OneDrive\Pulpit\WpfHotelRepo\HotelWpfApp\obj\Debug\net6.0-windows\HotelWpfApp.genruntimeconfig.cache
 C:\Users\tomas\OneDrive\Pulpit\WpfHotelRepo\HotelWpfApp\obj\Debug\net6.0-windows\ref\HotelWpfApp.dll
-C:\Users\tomas\OneDrive\Pulpit\WpfHotelRepo\HotelWpfApp\bin\Debug\net6.0-windows\TimePeriod.dll
-C:\Users\tomas\OneDrive\Pulpit\WpfHotelRepo\HotelWpfApp\bin\Debug\net6.0-windows\Itenso.TimePeriod.dll

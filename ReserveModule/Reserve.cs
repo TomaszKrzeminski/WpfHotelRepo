@@ -25,6 +25,10 @@ namespace ReserveModule
             manager.RegisterViewWithRegion("ContentReservation", typeof(ReserveRoom));
             manager.RegisterViewWithRegion("ContentReservation", typeof(AddMeals));
             manager.RegisterViewWithRegion("ContentReservation", typeof(AddActivities));
+            //manager.RegisterViewWithRegion("ContentReservation", typeof(ShowSummary));
+            manager.RegisterViewWithRegion("ContentAddReservation", typeof(ShowSummary));
+
+
         }
 
         public Reserve(IRegionManager manager)
@@ -43,11 +47,12 @@ namespace ReserveModule
             //var optionsBuilder = new DbContextOptionsBuilder<HotelContext>();
             //optionsBuilder.UseSqlServer(@"Server=(localdb)\MSSQLLocalDB;Database=HotelWpfApp;Trusted_Connection=True;");
             //containerRegistry.RegisterInstance(optionsBuilder.Options);
-            containerRegistry.RegisterSingleton<HotelContext>();
+            containerRegistry.RegisterInstance<HotelContext>(new HotelContext());
             containerRegistry.Register<IRepository, Repository>();
             containerRegistry.RegisterForNavigation<ReservationViews>();
+            containerRegistry.RegisterForNavigation<ShowSummary>();
+            containerRegistry.RegisterForNavigation<ReserveRoom>();
 
-            
         }
       
     }

@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET6_0;NETCOREAPP
 
-4-311120760
+6889195347
 
-9-1798117689
+121650232438
 230-363295425
-Views\AddActivities.xaml;Views\AddMeals.xaml;Views\ReservationViews.xaml;Views\ReserveRoom.xaml;
+Views\AddActivities.xaml;Views\AddMeals.xaml;Views\ReservationViews.xaml;Views\ReserveRoom.xaml;Views\ShowSummary.xaml;Views\Summary.xaml;
 
 False
 
