@@ -164,7 +164,7 @@
 
 
 
-        <DataGrid AutoGenerateColumns="False" Grid.Row="8" Grid.ColumnSpan="4" ItemsSource="{Binding Path=RoomList}" SelectedItem="{Binding Path=RoomToAdd}">
+        <DataGrid AutoGenerateColumns="False" IsReadOnly="True" Grid.Row="8" Grid.ColumnSpan="4" ItemsSource="{Binding Path=RoomList}" SelectedItem="{Binding Path=RoomToAdd}">
                 <DataGrid.Columns>
                     <DataGridTextColumn Width="13*" Header="Numer" Binding="{Binding Path=RoomID}"/>
                     <DataGridTextColumn Width="13*" Header="Łazienka" Binding="{Binding Path=Bathroom}"/>

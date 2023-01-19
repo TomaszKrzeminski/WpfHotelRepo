@@ -126,13 +126,13 @@ namespace ReserveModule.ViewModels
         public ObservableCollection<Activity> AddedActivitiesList
         {
             get { return addedActivitiesList; }
-            set { SetProperty(ref addedActivitiesList, value);  }
+            set { SetProperty(ref addedActivitiesList, value);   }
         }
 
         IRepository repo;
         private DelegateCommand send;
         public DelegateCommand Send =>
-            send ?? (send = new DelegateCommand(ExecuteSend, CanExecuteSend));
+            send ?? (send = new DelegateCommand(ExecuteSend, CanExecuteSend).ObservesProperty(()=>ListCount));
 
         void ExecuteSend()
         {
@@ -143,7 +143,14 @@ namespace ReserveModule.ViewModels
 
         bool CanExecuteSend()
         {
-            return true;
+            if (AddedActivitiesList.Count() > 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
         private IEventAggregator agr;
         public AddActivitiesViewModel(IRepository repo,IEventAggregator agr)
@@ -156,7 +163,7 @@ namespace ReserveModule.ViewModels
             RemoveActivity = new DelegateCommand(ExecuteRemoveActivity, CanExecuteRemoveActivity).ObservesProperty(()=>SelectedA);
             ActivitiesList = new ObservableCollection<Activity>(repo.GetAllActivities());
             AddedActivitiesList = new ObservableCollection<Activity>();
-            Reset = new DelegateCommand(ExecuteReset, CanExecuteReset);
+            Reset = new DelegateCommand(ExecuteReset, CanExecuteReset).ObservesProperty(()=>ListCount);
             agr.GetEvent<ResetReservationEvent>().Subscribe(ResetView);
         }
 

@@ -21,7 +21,7 @@ namespace CoreModule.Models
         bool AddReservation(int UserID, Room room, DateTime startDate, DateTime endDate, List<Activity> activities, List<Meal> meals);
         bool CheckReservationForRoom(int RoomID,DateTime start,DateTime end);
         List<Room> GetAvailableRooms(DateTime start, DateTime end);
-        Meal GetRandomMeal(bool paid);
+        Meal GetRandomMeal(bool paid,MealType type);
     }
 
     public class Repository : IRepository
@@ -271,12 +271,31 @@ namespace CoreModule.Models
             }
         }
 
-        public Meal GetRandomMeal(bool paid)
+        public Meal GetRandomMeal(bool paid,MealType type)
         {
-           
-            List<Meal> meal=ctx.Meals.Where(x=>x.Price>0).
+            try
+            {
+                int count = 0;
+                List<Meal> meals = new List<Meal>();
+                if (paid)
+                {
+                    meals = ctx.Meals.Where(x => x.Price > 0&&x.type==type).ToList();
+                }
+                else
+                {
+                    meals = ctx.Meals.Where(x => x.Price == 0&&x.type==type).ToList();
+                }
+                count = meals.Count();
+                Random r = new Random();
+                int get = r.Next(0, count);
+                return meals.Count > 0 ? meals[get] : new Meal();
+            }
+            catch (Exception ex)
+            {
 
-
+                return new Meal();
+            }
+         
 
         }
     }

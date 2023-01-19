@@ -128,23 +128,15 @@ namespace ReserveModule.ViewModels
 
         void ExecuteReserveRoom()
         {
-            if(meals.Count == 0) 
-            {
-
-                meals = GetRandomMeals(meals);
-            
-            }
+            meals  ??= new List<Meal>();
+            meals = GetRandomMeals(meals); 
             AddReservationModel model = new AddReservationModel(SelectedUser.UserID, RoomToAdd, ReservationFrom, ReservationTo, activities, meals);
             model.UserName = SelectedUser.FirstName;
             model.UserSurname= SelectedUser.LastName;
-            model.PersonalNumber= SelectedUser.PersonalNumber;
-            //model.ActivitiesCost = activities.Sum(x => x.Price);
-            //model.MealsCost = meals.Sum(x => x.Price);
-            //model.FinalCost = model.ActivitiesCost + model.MealsCost + (RoomToAdd.Price * Calculate());
+            model.PersonalNumber= SelectedUser.PersonalNumber;          
             NavigationParameters par = new NavigationParameters();
             par.Add("AddReservation", model);
             manager.RequestNavigate("ContentReserveMain", "ShowSummary", par);
-
             
         }
 
@@ -178,23 +170,30 @@ namespace ReserveModule.ViewModels
                 int x = count - breakfast;
                 for (int i = 0; i < x; i++)
                 {
-                    meals.Add();
+                    meals.Add(repository.GetRandomMeal(false,MealType.Breakfast));
                 }
             }
 
             if(dinner<count)
             {
-
+                int x = count - dinner;
+                for (int i = 0; i < x; i++)
+                {
+                    meals.Add(repository.GetRandomMeal(false, MealType.Dinner));
+                }
             }
 
             if(supper<count)
             {
-
+                int x = count - supper;
+                for (int i = 0; i < x; i++)
+                {
+                    meals.Add(repository.GetRandomMeal(false, MealType.Supper));
+                }
             }
-
+            return meals;
 
         }
-
         bool CanExecuteReserveRoom()
         {
             return true;

@@ -75,7 +75,14 @@ namespace CoreModule.Models
 
         public decimal SetFinalCost()
         {
-           return FinalCost = SetMealCost() + SetActivityCost() + room.Price * Days;
+            if (room != null)
+            {
+                return FinalCost = SetMealCost() + SetActivityCost() + room.Price * Days;
+            }
+            else
+            {
+                return 0;
+            }
 
         }
 

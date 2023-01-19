@@ -30,7 +30,7 @@
             <Label FontSize="20">Cena : </Label>
             <Label Content="{Binding Path=Price}" FontSize="20"></Label>
         </StackPanel>
-        <DataGrid  AutoGenerateColumns="False" Grid.Row="3" Grid.Column="0"  ItemsSource="{Binding Path=ActivitiesList}" SelectedItem="{Binding Path=Selected}" x:Name="Added" CanUserAddRows="false">
+        <DataGrid IsReadOnly="True" AutoGenerateColumns="False" Grid.Row="3" Grid.Column="0"  ItemsSource="{Binding Path=ActivitiesList}" SelectedItem="{Binding Path=Selected}" x:Name="Added" CanUserAddRows="false">
             <DataGrid.Columns>
                 <DataGridTextColumn Width="20*" Header="Nazwa" Binding="{Binding Path=ActivityID}"/>
                 <DataGridTextColumn Width="20*" Header="Nazwa" Binding="{Binding Path=Name}"/>
@@ -51,7 +51,7 @@
             </DataGrid.Columns>
 
         </DataGrid>
-        <DataGrid AutoGenerateColumns="False" Grid.Row="3" Grid.Column="1"  ItemsSource="{Binding Path=AddedActivitiesList}" SelectedItem="{Binding Path=SelectedA}" x:Name="Removed" CanUserAddRows="false">
+        <DataGrid IsReadOnly="True" AutoGenerateColumns="False" Grid.Row="3" Grid.Column="1"  ItemsSource="{Binding Path=AddedActivitiesList}" SelectedItem="{Binding Path=SelectedA}" x:Name="Removed" CanUserAddRows="false">
             <DataGrid.Columns>
                 <DataGridTextColumn Width="20*" Header="Nazwa" Binding="{Binding Path=ActivityID}"/>
                 <DataGridTextColumn Width="20*" Header="Nazwa" Binding="{Binding Path=Name}"/>
@@ -73,7 +73,7 @@
 
         </DataGrid>
         <StackPanel Margin="0,10" Grid.Row="4" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Top" Grid.Column="1">
-            <Button Command="{Binding Path=Reset}">Wyczyść</Button>
+            <Button Margin="0,0,10,0" Command="{Binding Path=Reset}">Wyczyść</Button>
             <Button Command="{Binding Path=Send}">Zatwierdź</Button>
         </StackPanel>
 

@@ -121,7 +121,7 @@
             </DataGrid.Columns>
 
         </DataGrid>
-        <DataGrid AutoGenerateColumns="False" Grid.Row="3" Grid.Column="1"  ItemsSource="{Binding Path=DinnerListChosen}" SelectedItem="{Binding Path=SelectedDinnerListChosen}" x:Name="DinnerListChosen" CanUserAddRows="false">
+        <DataGrid IsReadOnly="True" AutoGenerateColumns="False" Grid.Row="3" Grid.Column="1"  ItemsSource="{Binding Path=DinnerListChosen}" SelectedItem="{Binding Path=SelectedDinnerListChosen}" x:Name="DinnerListChosen" CanUserAddRows="false">
             <DataGrid.Columns>
                 <DataGridTextColumn Width="15*" Header="Nazwa" Binding="{Binding Path=Name}"/>
                 <DataGridTextColumn Width="15*" Header="Cena" Binding="{Binding Path=Price}"/>
@@ -141,7 +141,7 @@
 
         </DataGrid>
 
-        <DataGrid AutoGenerateColumns="False" Grid.Row="3" Grid.Column="2"  ItemsSource="{Binding Path=SupperListChosen}" SelectedItem="{Binding Path=SelectedSupperListChosen}" x:Name="SupperListChosen" CanUserAddRows="false">
+        <DataGrid IsReadOnly="True" AutoGenerateColumns="False" Grid.Row="3" Grid.Column="2"  ItemsSource="{Binding Path=SupperListChosen}" SelectedItem="{Binding Path=SelectedSupperListChosen}" x:Name="SupperListChosen" CanUserAddRows="false">
             <DataGrid.Columns>
                 <DataGridTextColumn Width="15*" Header="Nazwa" Binding="{Binding Path=Name}"/>
                 <DataGridTextColumn Width="15*" Header="Cena" Binding="{Binding Path=Price}"/>
@@ -161,8 +161,8 @@
 
         </DataGrid>
         <StackPanel Grid.Row="4" Grid.ColumnSpan="3" Orientation="Horizontal" HorizontalAlignment="Center" >
-            <Button MaxHeight="45" FontSize="30" HorizontalAlignment="Center" VerticalAlignment="Center" Command="{Binding Path=Reset}">Wyczyść</Button>
-            <Button MaxHeight="45" FontSize="30" HorizontalAlignment="Center" VerticalAlignment="Center" Command="{Binding Path=Send}">Zatwierdź</Button>
+            <Button Margin="0,0,10,0" MaxHeight="45" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Center" Command="{Binding Path=Reset}">Wyczyść</Button>
+            <Button MaxHeight="45" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Center" Command="{Binding Path=Send}">Zatwierdź</Button>
         </StackPanel>
 
 

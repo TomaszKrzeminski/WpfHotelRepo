@@ -163,6 +163,11 @@ namespace CoreModule.Models
 
     public class Meal
     {
+        public Meal()
+        {
+            Name = "Błąd podczas dodawania";
+            Price = 0;
+        }
         public Meal(MealType type, string name, decimal price)
         {
             this.type = type;

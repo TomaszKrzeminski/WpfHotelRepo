@@ -25,7 +25,7 @@ namespace ReserveModule.ViewModels
 
         private DelegateCommand reset;
         public DelegateCommand Reset =>
-            reset ?? (reset = new DelegateCommand(ExecuteReset, CanExecuteReset));
+            reset ?? (reset = new DelegateCommand(ExecuteReset, CanExecuteReset).ObservesProperty(()=>Count));
 
         void ExecuteReset()
         {
@@ -37,7 +37,14 @@ namespace ReserveModule.ViewModels
 
         bool CanExecuteReset()
         {
-            return true;
+            if (Count > 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
 
         public int Days { get; set; }
@@ -227,7 +234,7 @@ namespace ReserveModule.ViewModels
 
         private DelegateCommand send;
         public DelegateCommand Send =>
-            send ?? (send = new DelegateCommand(ExecuteSend, CanExecuteSend));
+            send ?? (send = new DelegateCommand(ExecuteSend, CanExecuteSend).ObservesProperty(()=>Count));
 
         void ExecuteSend()
         {
@@ -240,7 +247,14 @@ namespace ReserveModule.ViewModels
 
         bool CanExecuteSend()
         {
-            return true;
+            if(Count>0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
         public AddMealsViewModel(IRepository repo,IEventAggregator agr)
         {
