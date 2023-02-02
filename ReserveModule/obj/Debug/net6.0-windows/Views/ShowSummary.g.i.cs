@@ -76,7 +76,7 @@ namespace ReserveModule.Views {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/ReserveModule;component/views/showsummary.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/ReserveModule;V1.0.0.0;component/views/showsummary.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\Views\ShowSummary.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

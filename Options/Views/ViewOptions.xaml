@@ -11,7 +11,7 @@
     <Grid>
         <StackPanel Orientation="Vertical" VerticalAlignment="Top">
             <Button Margin="20,10" Command="{Binding Path=NavigateCommand}" CommandParameter="ReservationViews">Rezerwuj</Button>
-            <Button Margin="20,10" Command="{Binding Path=NavigateCommand}" CommandParameter="{Binding Path=ReservationViews}">Kalendarz</Button>
+            <Button Margin="20,10" Command="{Binding Path=NavigateCommand}" CommandParameter="MainCalendar">Kalendarz</Button>
             <Button Margin="20,10" Command="{Binding Path=NavigateCommand}" CommandParameter="{Binding Path=ReservationViews}">Statystyki</Button>
             <Button Margin="20,10" Command="{Binding Path=NavigateCommand}" CommandParameter="{Binding Path=ReservationViews}">Edytuj</Button>
         </StackPanel>

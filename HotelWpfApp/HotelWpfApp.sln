@@ -21,6 +21,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ReserveModule", "ReserveMod
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ReserveModule", "..\ReserveModule\ReserveModule.csproj", "{71651846-D1F8-4D20-AB8E-3C5FAB2554B1}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CalendarModule", "CalendarModule", "{F12C12CE-A5C1-4416-87AB-332F55F93610}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CalendarModule", "..\CalendarModule\CalendarModule.csproj", "{55C0CB77-FED0-4BC9-AB88-FD202A145803}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -47,6 +51,10 @@ Global
 		{71651846-D1F8-4D20-AB8E-3C5FAB2554B1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{71651846-D1F8-4D20-AB8E-3C5FAB2554B1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{71651846-D1F8-4D20-AB8E-3C5FAB2554B1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{55C0CB77-FED0-4BC9-AB88-FD202A145803}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{55C0CB77-FED0-4BC9-AB88-FD202A145803}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{55C0CB77-FED0-4BC9-AB88-FD202A145803}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{55C0CB77-FED0-4BC9-AB88-FD202A145803}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -56,6 +64,7 @@ Global
 		{69B6B80C-A23A-4C33-A554-6325BD56C052} = {3F582479-69C5-460C-A123-802F0D9A5C86}
 		{A1B9D231-B469-44F6-BC35-405EF4B9F5C2} = {BB903EA6-7B40-48EB-A541-8AE81B2C8DC0}
 		{71651846-D1F8-4D20-AB8E-3C5FAB2554B1} = {20DB6767-BC52-417F-ABD7-F7AB5DF2A4F9}
+		{55C0CB77-FED0-4BC9-AB88-FD202A145803} = {F12C12CE-A5C1-4416-87AB-332F55F93610}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {8EEABC47-36EC-4486-84B6-7C29471EE815}

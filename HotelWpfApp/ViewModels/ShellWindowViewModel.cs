@@ -1,17 +1,21 @@
 ﻿using CoreModule.Models;
+using Prism.Commands;
 using Prism.Mvvm;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Prism.Regions;
 
 namespace HotelWpfApp.ViewModels
 {
-    public class ShellWindowViewModel :BindableBase
+    public class ShellWindowViewModel : BindableBase, INavigationAware
     {
 
         HotelContext ctx;
+        IRegionNavigationJournal journal;
+
+        
+
+
+
+
         public ShellWindowViewModel(HotelContext ctx)
         {
             this.ctx = ctx;
@@ -19,5 +23,19 @@ namespace HotelWpfApp.ViewModels
             s.Seed();
         }
 
+        public bool IsNavigationTarget(NavigationContext navigationContext)
+        {
+            return true;
+        }
+
+        public void OnNavigatedFrom(NavigationContext navigationContext)
+        {
+
+        }
+
+        public void OnNavigatedTo(NavigationContext navigationContext)
+        {
+          
+        }
     }
 }

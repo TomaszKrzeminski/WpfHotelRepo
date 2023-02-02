@@ -5,7 +5,9 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:NavigationModule.Views"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
+             d:DesignHeight="450" d:DesignWidth="800"
+             xmlns:prism="http://prismlibrary.com/"
+             prism:ViewModelLocator.AutoWireViewModel="True">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="100*"></RowDefinition>
@@ -19,11 +21,11 @@
             </Grid.ColumnDefinitions>
 
             <StackPanel  Grid.Column="0" Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center">
-                <Button >Hotel</Button>
+                <Button Command="{Binding Path=Home}" >Hotel</Button>
             </StackPanel>
             <StackPanel Grid.Column="1" Orientation="Horizontal" VerticalAlignment="Center">
-                <Button Margin="2,10">Back</Button>
-                <Button Margin="2,10" >Foward</Button>
+                <Button Command="{Binding Path=Back}" Margin="2,10">Back</Button>
+                <Button Command="{Binding Path=Foward}" Margin="2,10" >Foward</Button>
             </StackPanel>
 
         </Grid>

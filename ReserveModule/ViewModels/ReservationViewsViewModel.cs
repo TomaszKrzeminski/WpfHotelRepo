@@ -9,19 +9,41 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Controls;
 
 namespace ReserveModule.ViewModels
 {
-    public class ReservationViewsViewModel : BindableBase
+    public class ReservationViewsViewModel : BindableBase, IConfirmNavigationRequest
     {
-        //HotelContext ctx;
-        //public ReservationViewsViewModel(HotelContext ctx)
-        //{
-        //    this.ctx = ctx;          
-        //    SeedData s = new SeedData(ctx);
-        //    s.Seed();
-        //}     
+        
+        public void ConfirmNavigationRequest(NavigationContext navigationContext, Action<bool> continuationCallback)
+        {
+            var result = true;
+
+            if (MessageBox.Show("Czy chcesz przerwać rezerwację", "Przerwij", MessageBoxButton.YesNo) == MessageBoxResult.No)
+            {
+                result = false;
+            }
+
+
+            continuationCallback(result);
+        }
+
+        public bool IsNavigationTarget(NavigationContext navigationContext)
+        {
+            return true;
+        }
+
+        public void OnNavigatedFrom(NavigationContext navigationContext)
+        {
+           
+        }
+
+        public void OnNavigatedTo(NavigationContext navigationContext)
+        {
+           
+        }
     }
 
 }

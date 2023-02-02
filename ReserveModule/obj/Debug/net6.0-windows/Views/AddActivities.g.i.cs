@@ -75,7 +75,7 @@ namespace ReserveModule.Views {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/ReserveModule;component/views/addactivities.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/ReserveModule;V1.0.0.0;component/views/addactivities.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\Views\AddActivities.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

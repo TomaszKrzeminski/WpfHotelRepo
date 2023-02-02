@@ -2220,6 +2220,23 @@
           "lib/netstandard1.6/Itenso.TimePeriod.dll": {}
         }
       },
+      "CalendarModule/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "CoreModule": "1.0.0",
+          "Prism.Wpf": "7.2.0.1422"
+        },
+        "compile": {
+          "bin/placeholder/CalendarModule.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/CalendarModule.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.WindowsDesktop.App.WPF"
+        ]
+      },
       "CoreModule/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
@@ -7180,6 +7197,11 @@
         "timeperiodlibrary.net.nuspec"
       ]
     },
+    "CalendarModule/1.0.0": {
+      "type": "project",
+      "path": "../CalendarModule/CalendarModule.csproj",
+      "msbuildProject": "../CalendarModule/CalendarModule.csproj"
+    },
     "CoreModule/1.0.0": {
       "type": "project",
       "path": "../CoreModule/CoreModule.csproj",
@@ -7203,6 +7225,7 @@
   },
   "projectFileDependencyGroups": {
     "net6.0-windows7.0": [
+      "CalendarModule >= 1.0.0",
       "CoreModule >= 1.0.0",
       "NavigationModule >= 1.0.0",
       "OptionsModule >= 1.0.0",
@@ -7215,7 +7238,8 @@
   },
   "packageFolders": {
     "C:\\Users\\tomas\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {},
+    "C:\\Program Files (x86)\\Progress\\ToolboxNuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
@@ -7227,24 +7251,30 @@
       "outputPath": "C:\\Users\\tomas\\OneDrive\\Pulpit\\WpfHotelRepo\\HotelWpfApp\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+        "C:\\Program Files (x86)\\Progress\\ToolboxNuGetPackages"
       ],
       "configFilePaths": [
         "C:\\Users\\tomas\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Telerik UI for WPF.config"
       ],
       "originalTargetFrameworks": [
         "net6.0-windows"
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "https://api.nuget.org/v3/index.json": {}
+        "https://api.nuget.org/v3/index.json": {},
+        "https://nuget.telerik.com/v3/index.json": {}
       },
       "frameworks": {
         "net6.0-windows7.0": {
           "targetAlias": "net6.0-windows",
           "projectReferences": {
+            "C:\\Users\\tomas\\OneDrive\\Pulpit\\WpfHotelRepo\\CalendarModule\\CalendarModule.csproj": {
+              "projectPath": "C:\\Users\\tomas\\OneDrive\\Pulpit\\WpfHotelRepo\\CalendarModule\\CalendarModule.csproj"
+            },
             "C:\\Users\\tomas\\OneDrive\\Pulpit\\WpfHotelRepo\\CoreModule\\CoreModule.csproj": {
               "projectPath": "C:\\Users\\tomas\\OneDrive\\Pulpit\\WpfHotelRepo\\CoreModule\\CoreModule.csproj"
             },

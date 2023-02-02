@@ -8,6 +8,7 @@
     ".NETCoreApp,Version=v6.0": {
       "HotelWpfApp/1.0.0": {
         "dependencies": {
+          "CalendarModule": "1.0.0",
           "CoreModule": "1.0.0",
           "NavigationModule": "1.0.0",
           "OptionsModule": "1.0.0",
@@ -1179,6 +1180,15 @@
           }
         }
       },
+      "CalendarModule/1.0.0": {
+        "dependencies": {
+          "CoreModule": "1.0.0",
+          "Prism.Wpf": "7.2.0.1422"
+        },
+        "runtime": {
+          "CalendarModule.dll": {}
+        }
+      },
       "CoreModule/1.0.0": {
         "dependencies": {
           "Microsoft.EntityFrameworkCore": "7.0.1",
@@ -2122,6 +2132,11 @@
       "sha512": "sha512-iiy1HaR8Sy+41I2DYPrl5llmlij5qzRv0X2tD3hGN0NoEX3La+0UIahMptbzsYsOokbIoNjuPrHdQcCgiTT45A==",
       "path": "timeperiodlibrary.net/2.1.1",
       "hashPath": "timeperiodlibrary.net.2.1.1.nupkg.sha512"
+    },
+    "CalendarModule/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
     },
     "CoreModule/1.0.0": {
       "type": "project",

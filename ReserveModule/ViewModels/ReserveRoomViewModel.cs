@@ -117,14 +117,7 @@ namespace ReserveModule.ViewModels
         }
         private DelegateCommand reserveRoom;
         public DelegateCommand ReserveRoom =>
-            reserveRoom ?? (reserveRoom = new DelegateCommand(ExecuteReserveRoom, CanExecuteReserveRoom));
-
-        //void ExecuteReserveRoom()
-        //{
-
-        //    repository.AddReservation(SelectedUser.UserID, RoomToAdd, ReservationFrom,ReservationTo,activities,meals);
-        //    filteringRooms.Execute();
-        //}
+            reserveRoom ?? (reserveRoom = new DelegateCommand(ExecuteReserveRoom, CanExecuteReserveRoom));     
 
         void ExecuteReserveRoom()
         {
@@ -136,10 +129,8 @@ namespace ReserveModule.ViewModels
             model.PersonalNumber= SelectedUser.PersonalNumber;          
             NavigationParameters par = new NavigationParameters();
             par.Add("AddReservation", model);
-            manager.RequestNavigate("ContentReserveMain", "ShowSummary", par);
-            
+            manager.RequestNavigate("ContentReserveMain", "ShowSummary", par);            
         }
-
         private List<Meal> GetRandomMeals(List<Meal> meals)
         {
 
@@ -201,7 +192,6 @@ namespace ReserveModule.ViewModels
         private DelegateCommand filteringRooms;
         public DelegateCommand FilteringRooms =>
             filteringRooms ?? (filteringRooms = new DelegateCommand(ExecuteFilteringRooms, CanExecuteFilteringRooms));
-
         void ExecuteFilteringRooms()
         {
             int beds = (int)SelectedBeeds+1;
@@ -264,7 +254,6 @@ namespace ReserveModule.ViewModels
             RoomList.Clear();
             RoomList.AddRange(list);
         }
-
         bool CanExecuteShowAll()
         {
             return true;
@@ -313,7 +302,7 @@ namespace ReserveModule.ViewModels
 
         public void OnNavigatedTo(NavigationContext navigationContext)
         {
-            FilteringRooms.Execute();
+           
         }
 
         public bool IsNavigationTarget(NavigationContext navigationContext)
@@ -323,7 +312,7 @@ namespace ReserveModule.ViewModels
 
         public void OnNavigatedFrom(NavigationContext navigationContext)
         {
-            FilteringRooms.Execute();
+           
         }
     }
 }
